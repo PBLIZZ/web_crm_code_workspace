@@ -1,0 +1,39 @@
+# Environment variables
+.env
+*.env.local
+*.env.*.local
+
+# Original Database configuration - will be superseded by .env usage
+# Forms/db_config.php # Allow versioning of the loader script as it's now secret-free
+
+# IDE and OS specific
+.DS_Store
+*.code-workspace
+.vscode/
+.idea/
+
+# Dependency directories
+vendor/
+node_modules/
+
+# Log files
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files & Caches
+*.tmp
+*.swp
+*~
+.cache/
+*.cache
+
+# Build output
+dist/
+build/
+public/build/
+
+# PHP Composer
+composer.lock
