@@ -1,0 +1,26 @@
+{
+  "name": "web_omnipotency_ai",
+  "version": "1.0.0",
+  "description": "## Vision & Purpose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./public/assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PBLIZZ/web_crm_code_workspace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PBLIZZ/web_crm_code_workspace/issues"
+  },
+  "homepage": "https://github.com/PBLIZZ/web_crm_code_workspace#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+    :root {
+      /* Brand Colors */
+      --brand-primary-green: #006A5C;
+      --brand-primary-orange: #FF8700;
+      --brand-hero-highlight: #43e8d8;
+      --brand-dark-base: #0A1D1A;
+      --brand-card-dark: #1c2a28;
+      --brand-light-gray: #f8fafd;
+      --brand-white: #FFFFFF;
+      
+      /* Text Colors */
+      --brand-text-light: #e2e8f0;
+      --brand-text-dark: #1e293b;
+      --brand-text-muted-light: #a0aec0;
+      --brand-text-muted-dark: #64748b;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Custom components */
+  @layer components {
+    /* You can add custom component classes here */
+  }
+  
+  /* Custom utilities */
+  @layer utilities {
+    /* You can add custom utility classes here */
+  }
