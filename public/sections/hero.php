@@ -14,7 +14,7 @@
             
             <!-- Text Content Column (takes more space initially, image is positioned) -->
             <div class="w-full lg:w-4/5 xl:w-2/3 text-center lg:text-left space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
-                <h1 class="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                <h1 class="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
                     The <span class="text-brand-teal-400">AI-Powered CRM</span>
                     for <span class="text-brand-orange-500">Wellness Practitioners</span>
                     that Gets It <span class="text-brand-teal-400">Done</span>

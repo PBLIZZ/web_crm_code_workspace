@@ -45,6 +45,7 @@ ob_start();
 // Ensure these files exist in public/sections/
 // echo "<h1>Hero Section Would Be Here</h1>"; // Test with simple echo
 include __DIR__ . '/sections/hero.php';
+include __DIR__ . '/sections/features_overview.php';
 // include __DIR__ . '/sections/key_benefits.php'; // Example from mockup
 // include __DIR__ . '/sections/social_proof_or_logos.php';
 // include __DIR__ . '/sections/how_it_works_hub_diagram.php';

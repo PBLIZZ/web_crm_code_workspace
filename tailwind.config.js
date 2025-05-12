@@ -23,8 +23,9 @@ module.exports = {
           }
         }
       },
-      fontFamily: { // Ensure your Poppins font is here if it's primary
-        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'], // Added Poppins as primary
+      fontFamily: {
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'], // Body font (Poppins first)
+        heading: ['Inter', 'Poppins', 'system-ui', 'sans-serif'] // Heading font (Inter first)
       }
     }
   },

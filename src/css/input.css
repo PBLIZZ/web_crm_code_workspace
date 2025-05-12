@@ -35,7 +35,66 @@
   
   /* Custom components */
   @layer components {
-    /* You can add custom component classes here */
+    /* Feature card heading responsive styles */
+    .feature-card-slide h3 {
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    
+    /* Extra small screen adjustments (mobile) */
+    @media (max-width: 639px) {
+      #featureCardSlider {
+        max-width: 85%;
+        margin: 0 auto;
+      }
+      
+      .feature-card-slide .bg-slate-800\/50 {
+        padding: 1rem !important;
+      }
+      
+      .feature-card-slide p {
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+      }
+    }
+    
+    /* Small screen layout (640px - 773px) - Stacked columns with 2 cards per row */
+    @media (min-width: 640px) and (max-width: 773px) {
+      #featureCardSlider {
+        max-width: 92%;
+        margin: 0 auto;
+      }
+      
+      .feature-card-slide h3 {
+        font-size: 0.95rem;
+      }
+      
+      /* Add extra margin below text for stacked layout */
+      #features-overview .md\:mb-0 {
+        margin-bottom: 2.5rem;
+      }
+    }
+    
+    /* Tablet optimizations */
+    @media (min-width: 768px) and (max-width: 1200px) {
+      .feature-card-slide h3 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+      }
+      
+      /* Specific fixes for problematic headings */
+      #feat-docs-vault h3, 
+      #feat-dashboards h3, 
+      #feat-membership-engine h3 {
+        font-size: 0.9rem;
+        letter-spacing: -0.01em;
+      }
+    }
   }
   
   /* Custom utilities */
