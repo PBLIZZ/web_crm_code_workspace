@@ -1,0 +1,64 @@
+# Task ID: 7
+# Title: Integrate AI Chatbot (OpenRouter - Basic Q&A & Site Search)
+# Status: pending
+# Dependencies: 1, 2, 4
+# Priority: medium
+# Description: Integrate a floating AI chatbot widget (REQ-AI-201) on all pages using vanilla JS. Connect to OpenRouter API (REQ-AI-202) via a PHP backend script for Q&A and intelligent site search/link suggestions (REQ-AI-204).
+# Details:
+# Frontend (main.js):
+# - Create HTML for floating chat widget (toggle button, chat window, input field, messages area).
+# - On message submit, use Fetch API to send query to a PHP backend endpoint (e.g., api/chatbot.php).
+
+# Backend (api/chatbot.php):
+# - Receive user query (JSON POST request).
+# - Sanitize input.
+# - Construct prompt for OpenRouter. Example: "You are Omnipotency.ai's assistant. Answer based on our site (product, pricing, blog). Question: [USER_QUERY] Provide relevant site links like /product or /blog/article-name."
+# - Use PHP cURL to call OpenRouter API (model choice as per OpenRouter docs, e.g., a fast, capable model).
+# - Store OpenRouter API key securely (environment variable or non-web-accessible config).
+# - Process response, extract text and potential links.
+# - Return JSON: { "reply": "...", "links": [{ "title": "Pricing", "url": "/pricing" }] }.
+
+# Frontend (main.js):
+# - Append user message and bot reply to chat window. Render links if provided.
+# - Include chatbot JS/HTML structure in common footer (e.g. includes/footer.php).
+
+# Test Strategy:
+Verify chatbot widget is on all pages. Test Q&A about CRM features, pricing (ST-WEB-CHAT-201). Check if bot provides relevant answers and suggests site links. Monitor OpenRouter API calls. Ensure API key security.
+
+# Subtasks:
+## 1. Design Chatbot UI Components [pending]
+### Dependencies: None
+### Description: Create responsive chat interface components including message bubbles, input field, and send button
+### Details:
+Implement chat window container, message history area, user input section, and styling for both user and bot messages using React components
+
+## 2. Implement OpenRouter API Integration [pending]
+### Dependencies: None
+### Description: Set up backend endpoints and services for OpenRouter API communication
+### Details:
+Create API wrapper, handle authentication, implement request/response handling, and establish error management protocols
+
+## 3. Secure API Key Management [pending]
+### Dependencies: 7.2
+### Description: Implement secure storage and handling of OpenRouter API keys
+### Details:
+Set up environment variables, implement key rotation system, and add encryption for API key storage
+
+## 4. Develop Response Processing System [pending]
+### Dependencies: 7.1, 7.2
+### Description: Create system to handle, format, and display chat responses
+### Details:
+Implement message parsing, formatting, and real-time updates for chat interface
+
+## 5. Implement Suggested Links Feature [pending]
+### Dependencies: 7.4
+### Description: Add functionality to display and manage suggested links in chat responses
+### Details:
+Create link extraction logic, implement link preview components, and handle link interaction events
+
+## 6. Comprehensive Testing Implementation [pending]
+### Dependencies: 7.1, 7.2, 7.3, 7.4, 7.5
+### Description: Develop and execute test suite for all chatbot functionalities
+### Details:
+Create unit tests, integration tests, and end-to-end tests for all chat features and pages
+

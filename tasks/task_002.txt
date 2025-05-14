@@ -1,0 +1,76 @@
+# Task ID: 2
+# Title: Implement Base Styling, Layout, and Responsive Design with Tailwind CSS
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Set up Tailwind CSS (v3/4) build process. Implement the overall site layout, navigation, typography, color scheme (deep green, calming blues, orange accents), and ensure mobile-first responsive design for all core page templates.
+# Details:
+# Install Tailwind CSS
+npm install -D tailwindcss
+npx tailwindcss init
+
+# Configure tailwind.config.js
+# module.exports = {
+#   content: ["./*.php", "./includes/**/*.php", "./public/**/*.js"],
+#   theme: {
+#     extend: {
+#       colors: {
+#         'brand-green': '#1A472A', // Example, replace with actual
+#         'brand-blue': '#A0D2DB', // Example
+#         'brand-orange-accent': '#F5A623', // Example
+#       }
+#     },
+#   },
+#   plugins: [],
+# }
+
+# Create input CSS (e.g., src/input.css or assets/css/input.css):
+# @tailwind base;
+# @tailwind components;
+# @tailwind utilities;
+
+# Setup build script in package.json for Tailwind CLI:
+# "scripts": { "build:css": "tailwindcss -i ./assets/css/input.css -o ./public/assets/css/style.css --watch" }
+
+# Apply Tailwind classes to HTML elements in PHP files for header, footer, navigation, and basic page structure. Ensure responsive design using Tailwind's breakpoints.
+
+# Test Strategy:
+Verify Tailwind CSS compiles to `public/assets/css/style.css`. Inspect pages on different screen sizes (mobile, tablet, desktop) to ensure responsiveness. Check for consistent branding (colors, fonts) and adherence to UI principles (simple, elegant, intuitive). Basic WCAG checks for color contrast.
+
+# Subtasks:
+## 1. Install Tailwind CSS Dependencies [pending]
+### Dependencies: None
+### Description: Install Tailwind CSS and its peer dependencies via npm/yarn and initialize the configuration file
+### Details:
+Run npm install tailwindcss postcss autoprefixer, create postcss.config.js, and initialize tailwind.config.js with npx tailwindcss init
+
+## 2. Configure Build Process [pending]
+### Dependencies: 2.1
+### Description: Set up the build pipeline to process Tailwind CSS directives and optimize output
+### Details:
+Configure content paths in tailwind.config.js, set up build scripts, and ensure proper CSS processing order
+
+## 3. Define Color Palette and Typography [pending]
+### Dependencies: 2.2
+### Description: Customize the default theme with project-specific colors and typography settings
+### Details:
+Extend tailwind.config.js with custom colors, font families, and typography scale settings
+
+## 4. Implement Layout and Navigation Styles [pending]
+### Dependencies: 2.3
+### Description: Create base layout components and navigation styles using Tailwind utility classes
+### Details:
+Build responsive container layouts, navigation components, and common UI patterns using Tailwind classes
+
+## 5. Configure Responsive Breakpoints [pending]
+### Dependencies: 2.4
+### Description: Set up and test responsive design breakpoints for different screen sizes
+### Details:
+Define custom breakpoints in config, implement responsive utilities, and test across different viewport sizes
+
+## 6. Perform Accessibility Checks [pending]
+### Dependencies: 2.4, 2.5
+### Description: Ensure all styled components meet WCAG accessibility guidelines
+### Details:
+Test color contrast ratios, keyboard navigation, and screen reader compatibility of styled components
+

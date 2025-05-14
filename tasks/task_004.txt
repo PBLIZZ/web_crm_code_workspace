@@ -1,0 +1,73 @@
+# Task ID: 4
+# Title: PHP Backend Setup for Forms, API, and Database Connection
+# Status: pending
+# Dependencies: 1, 2, 3
+# Priority: high
+# Description: Configure the PHP backend environment on Hostinger. Implement secure form handling for contact forms (e.g., Investor Relations contact form REQ-WEB-111). Set up MySQL database connection details. Establish a basic structure for future API endpoints.
+# Details:
+# Create PHP scripts for form processing (e.g., handle_investor_form.php).
+# - Validate and sanitize input data (filter_var, htmlspecialchars).
+# - Implement CSRF token generation and validation for forms.
+# - For Investor Relations form: Collect data, use SendGrid API (PHP library) to send email. Store SendGrid API key securely (e.g., environment variable on Hostinger or a config file outside web root).
+# - Provide user feedback (success/error message) via PHP sessions or query parameters.
+
+# db_config.php (store outside web root if possible, or protect with .htaccess):
+# <?php
+# define('DB_SERVER', 'your_hostinger_mysql_host');
+# define('DB_USERNAME', 'your_db_username');
+# define('DB_PASSWORD', 'your_db_password');
+# define('DB_NAME', 'your_db_name');
+# $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+# if($mysqli->connect_error) { die('Connection Error: ' . $mysqli->connect_error); }
+# ?>
+
+# Basic API structure (e.g., /api/v1/):
+# - Create an api.php router or individual endpoint files (e.g., api/chatbot.php).
+# - Use .htaccess for clean URLs if needed: RewriteRule ^api/v1/(.*)$ api.php?request=$1 [QSA,L]
+
+# Test Strategy:
+Test form submissions (e.g., Investor Relations form) ensuring data is processed, emails are sent via SendGrid, and security measures (validation, CSRF) work. Verify error handling. Confirm successful database connection using a test script. Check basic API routing if implemented.
+
+# Subtasks:
+## 1. Configure PHP Environment [pending]
+### Dependencies: None
+### Description: Set up and configure PHP on the server with necessary extensions and security settings
+### Details:
+Install PHP 8.x, configure php.ini for production, enable required modules, set memory limits, configure error reporting, implement basic security headers
+
+## 2. Implement Form Handling [pending]
+### Dependencies: 4.1
+### Description: Create secure form handling system with input validation and sanitization
+### Details:
+Implement input validation, sanitization filters, XSS prevention, file upload handling, and form submission processing logic
+
+## 3. Set up CSRF Protection [pending]
+### Dependencies: 4.2
+### Description: Implement CSRF token generation and validation system
+### Details:
+Create token generation mechanism, implement session handling, add token validation middleware, integrate with form handling system
+
+## 4. Integrate SendGrid [pending]
+### Dependencies: 4.1
+### Description: Set up SendGrid API integration for email functionality
+### Details:
+Install SendGrid SDK, configure API credentials, create email templates, implement email sending service, add retry mechanism
+
+## 5. Configure Database Connection [done]
+### Dependencies: 4.1
+### Description: Establish secure database connection and configuration
+### Details:
+Set up database credentials, implement connection pooling, create database wrapper class, implement prepared statements, add connection error handling
+
+## 6. Create API Structure [pending]
+### Dependencies: 4.3, 4.4, 4.5
+### Description: Design and implement API endpoint architecture
+### Details:
+Define API routes, implement request/response handling, create middleware stack, add authentication layer, implement rate limiting
+
+## 7. Implement Error Handling [pending]
+### Dependencies: 4.6
+### Description: Set up comprehensive error handling and logging system
+### Details:
+Create error handling middleware, implement logging system, add error reporting, create custom exception classes, implement fallback error pages
+

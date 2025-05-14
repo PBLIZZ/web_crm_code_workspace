@@ -1,0 +1,71 @@
+# Task ID: 1
+# Title: Project Setup, Version Control, and Basic HTML Structure
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Initialize the project environment, set up the Git repository on GitHub (`web_crm_code_workspace`), and create the basic HTML files (`index.php`, `about.php`, etc.) with common header, footer, and navigation elements. This includes setting up the local development environment (MAMP/XAMPP/WAMP).
+# Details:
+# Initialize Git repository
+git init
+git remote add origin <repository_url_for_web_crm_code_workspace>
+
+# Create project directory structure
+mkdir public
+mkdir public/assets
+mkdir public/assets/css
+mkdir public/assets/js
+mkdir src # For PHP backend logic or keep PHP files in root
+
+# Create basic PHP files for pages (e.g., index.php, about.php, product.php, pricing.php, blog.php, resources.php, docs.php, community.php, contact.php, investors.php, privacy.php, terms.php, cookies.php)
+# Each file should include:
+# <!DOCTYPE html>
+# <html lang="en">
+# <head>
+#   <meta charset="UTF-8">
+#   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#   <title>Omnipotency.ai - [Page Title]</title>
+#   <link rel="stylesheet" href="public/assets/css/style.css">
+# </head>
+# <body>
+#   <?php include 'includes/header.php'; ?>
+#   <main><!-- Page specific content --></main>
+#   <?php include 'includes/footer.php'; ?>
+#   <script src="public/assets/js/main.js"></script>
+# </body>
+# </html>
+# Create includes/header.php and includes/footer.php for common elements.
+
+# Test Strategy:
+Verify Git repository is created and accessible. Check that basic PHP files render correctly in a browser via local dev server (MAMP/XAMPP/WAMP) and include common header/footer elements.
+
+# Subtasks:
+## 1. Initialize Git Repository [pending]
+### Dependencies: None
+### Description: Create a new Git repository and set up initial .gitignore file
+### Details:
+Initialize git repository with 'git init', create .gitignore file with standard PHP exclusions, make initial commit
+
+## 2. Create Directory Structure [pending]
+### Dependencies: 1.1
+### Description: Set up project folders and organize file structure
+### Details:
+Create folders for assets, includes, pages, css, js, and config. Document structure in README.md
+
+## 3. Configure Local Development Environment [pending]
+### Dependencies: 1.2
+### Description: Set up local PHP server and development tools
+### Details:
+Install/configure PHP, set up local server, verify PHP version compatibility, configure error reporting
+
+## 4. Create Base PHP Files [pending]
+### Dependencies: 1.2, 1.3
+### Description: Create initial PHP files for each required page
+### Details:
+Create index.php, about.php, contact.php with basic PHP structure and placeholder content
+
+## 5. Implement Shared Components [pending]
+### Dependencies: 1.4
+### Description: Create and integrate header and footer includes
+### Details:
+Create header.php and footer.php in includes directory, implement basic HTML structure, add include statements to all pages
+

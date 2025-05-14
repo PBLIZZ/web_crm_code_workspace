@@ -1,0 +1,64 @@
+# Task ID: 3
+# Title: Develop Core Static Content Pages
+# Status: pending
+# Dependencies: 1, 2
+# Priority: high
+# Description: Populate the HTML structures with content for Homepage (REQ-WEB-101 - hero, value prop, feature highlights, testimonials placeholder, latest-posts carousel placeholder), About (REQ-WEB-102), Product/Features (REQ-WEB-103), Pricing (REQ-WEB-104), Contact/Support (REQ-WEB-110), Investor Relations (REQ-WEB-111), and Legal pages (REQ-WEB-112 - Privacy, Terms, Cookie Policy).
+# Details:
+# For each page (index.php, about.php, product.php, etc.):
+# - Add specific content as per PRD REQ-WEB-101 to REQ-WEB-104, REQ-WEB-110 to REQ-WEB-112.
+# - Use Tailwind CSS classes for styling.
+# - Homepage (index.php): Implement hero section with CTA, feature highlights. Add placeholders for testimonials and latest-posts carousel (JS functionality for carousel can be deferred).
+# - About page (about.php): Add mission, values, founder story.
+# - Product/Features page (product.php): Detail CRM features with placeholders for visuals.
+# - Pricing page (pricing.php): Clearly communicate "Free Forever" tier and future model.
+# - Contact/Support page (contact.php): Provide help information.
+# - Investor Relations page (investors.php): Overview and a simple mailto link or placeholder for contact form.
+# - Legal pages (privacy.php, terms.php, cookies.php): Add initial content for policies.
+
+# Test Strategy:
+Review each page for content accuracy against PRD. Verify navigation between pages. Check CTAs are present and clear. Ensure pages are responsive and visually appealing. Validate HTML structure.
+
+# Subtasks:
+## 1. Homepage Development [pending]
+### Dependencies: None
+### Description: Create and style the homepage with hero section, key features overview, and call-to-action components
+### Details:
+Implement responsive hero section, feature highlights grid, testimonials carousel, and main CTA using Tailwind CSS. Include navigation menu and footer components.
+
+## 2. About Page Implementation [pending]
+### Dependencies: 3.1
+### Description: Design and develop the About page with company story, team section, and mission statement
+### Details:
+Create company timeline, team member grid with photos and bios, mission/vision statements, and company values section using Tailwind styling.
+
+## 3. Product/Features Page Creation [pending]
+### Dependencies: 3.1
+### Description: Build comprehensive product features page with detailed functionality breakdowns
+### Details:
+Implement feature comparison tables, interactive demos, technical specifications, and integration guides with responsive Tailwind layouts.
+
+## 4. Pricing Page Development [pending]
+### Dependencies: 3.1
+### Description: Create pricing page with tiered plans, comparison table, and subscription options
+### Details:
+Build pricing cards, feature comparison matrix, custom plan calculator, and FAQ section using Tailwind components.
+
+## 5. Contact/Support Page Setup [pending]
+### Dependencies: 3.1
+### Description: Implement contact forms, support resources, and help center functionality
+### Details:
+Create contact form with validation, knowledge base section, support ticket system integration, and live chat widget implementation.
+
+## 6. Investor Relations Page [pending]
+### Dependencies: 3.1
+### Description: Develop investor relations page with financial reports and company updates
+### Details:
+Build sections for annual reports, quarterly earnings, stock information, corporate governance, and investor news feed.
+
+## 7. Legal Pages Implementation [pending]
+### Dependencies: 3.1
+### Description: Create privacy policy, terms of service, and other legal documentation pages
+### Details:
+Implement terms of service, privacy policy, cookie policy, and GDPR compliance pages with proper formatting and navigation.
+

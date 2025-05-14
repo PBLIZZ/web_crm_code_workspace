@@ -1,0 +1,56 @@
+# Task ID: 10
+# Title: Create Documentation Hub Structure and Community Placeholder
+# Status: pending
+# Dependencies: 1, 2, 3
+# Priority: low
+# Description: Develop the basic structure for the Documentation Hub (REQ-WEB-108) with an entry page and template for individual doc pages. Create a placeholder page for the Community forum (REQ-WEB-109). Add placeholders for embedded YouTube videos for tutorials.
+# Details:
+# Documentation Hub (REQ-WEB-108):
+# - docs.php (Entry page): Layout with sidebar for navigation (categories/topics) and main content area.
+# - doc_article.php (Template for individual doc pages):
+#   - Takes a parameter (e.g., ?topic=getting-started) to load content.
+#   - Content can be static PHP includes initially: `<?php include 'docs_content/getting-started.html'; ?>`
+#   - Structure for title, content (rich text, images, cross-links).
+#   - Placeholder for embedded YouTube videos (using standard YouTube iframe embed code).
+#   - Example URL structure: /docs or /docs.php, /docs/article-slug or /doc_article.php?topic=article-slug. Use .htaccess for cleaner URLs.
+
+# Community Forum Placeholder (REQ-WEB-109):
+# - community.php: Static page with message about future forum, benefits, and optional interest form (simple mailto or link to contact page).
+
+# Support (REQ-WEB-110, REQ-WEB-5.7):
+# - Ensure contact/support page clearly links to docs, chatbot, and mentions GitHub for technical issues.
+
+# Test Strategy:
+Verify Documentation Hub entry page and sample doc pages render with navigation. Check community placeholder page displays intended message. Confirm placeholders for YouTube videos are present. Ensure support information is clear and accessible.
+
+# Subtasks:
+## 1. Create Documentation Hub Entry Page [pending]
+### Dependencies: None
+### Description: Design and implement the main landing page for the documentation hub
+### Details:
+Create responsive layout, add welcome message, implement search bar placeholder, add category cards for main documentation sections
+
+## 2. Design Documentation Article Template [pending]
+### Dependencies: 10.1
+### Description: Create reusable template for documentation articles
+### Details:
+Define header structure, content area styling, code block formatting, table styles, and responsive breakpoints
+
+## 3. Implement Navigation Sidebar [pending]
+### Dependencies: 10.1
+### Description: Build collapsible navigation sidebar for documentation sections
+### Details:
+Create expandable menu structure, add section links, implement collapse/expand functionality, ensure mobile responsiveness
+
+## 4. Add YouTube Video Placeholders [pending]
+### Dependencies: 10.2
+### Description: Create embedded video sections with placeholders
+### Details:
+Design video container component, implement responsive iframe wrapper, add placeholder thumbnails and play buttons
+
+## 5. Build Community Forum Placeholder [pending]
+### Dependencies: 10.1, 10.3
+### Description: Create static community forum landing page
+### Details:
+Design forum layout, add category sections, create dummy thread listings, implement basic forum header and footer
+

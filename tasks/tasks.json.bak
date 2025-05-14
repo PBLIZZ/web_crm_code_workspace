@@ -1,0 +1,889 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Project Setup, Version Control, and Basic HTML Structure",
+      "description": "Initialize the project environment, set up the Git repository on GitHub (`web_crm_code_workspace`), and create the basic HTML files (`index.php`, `about.php`, etc.) with common header, footer, and navigation elements. This includes setting up the local development environment (MAMP/XAMPP/WAMP).",
+      "details": "# Initialize Git repository\ngit init\ngit remote add origin <repository_url_for_web_crm_code_workspace>\n\n# Create project directory structure\nmkdir public\nmkdir public/assets\nmkdir public/assets/css\nmkdir public/assets/js\nmkdir src # For PHP backend logic or keep PHP files in root\n\n# Create basic PHP files for pages (e.g., index.php, about.php, product.php, pricing.php, blog.php, resources.php, docs.php, community.php, contact.php, investors.php, privacy.php, terms.php, cookies.php)\n# Each file should include:\n# <!DOCTYPE html>\n# <html lang=\"en\">\n# <head>\n#   <meta charset=\"UTF-8\">\n#   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n#   <title>Omnipotency.ai - [Page Title]</title>\n#   <link rel=\"stylesheet\" href=\"public/assets/css/style.css\">\n# </head>\n# <body>\n#   <?php include 'includes/header.php'; ?>\n#   <main><!-- Page specific content --></main>\n#   <?php include 'includes/footer.php'; ?>\n#   <script src=\"public/assets/js/main.js\"></script>\n# </body>\n# </html>\n# Create includes/header.php and includes/footer.php for common elements.",
+      "testStrategy": "Verify Git repository is created and accessible. Check that basic PHP files render correctly in a browser via local dev server (MAMP/XAMPP/WAMP) and include common header/footer elements.",
+      "priority": "high",
+      "dependencies": [],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Initialize Git Repository",
+          "description": "Create a new Git repository and set up initial .gitignore file",
+          "dependencies": [],
+          "details": "Initialize git repository with 'git init', create .gitignore file with standard PHP exclusions, make initial commit",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Create Directory Structure",
+          "description": "Set up project folders and organize file structure",
+          "dependencies": [
+            1
+          ],
+          "details": "Create folders for assets, includes, pages, css, js, and config. Document structure in README.md",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Configure Local Development Environment",
+          "description": "Set up local PHP server and development tools",
+          "dependencies": [
+            2
+          ],
+          "details": "Install/configure PHP, set up local server, verify PHP version compatibility, configure error reporting",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Create Base PHP Files",
+          "description": "Create initial PHP files for each required page",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "Create index.php, about.php, contact.php with basic PHP structure and placeholder content",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Shared Components",
+          "description": "Create and integrate header and footer includes",
+          "dependencies": [
+            4
+          ],
+          "details": "Create header.php and footer.php in includes directory, implement basic HTML structure, add include statements to all pages",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Implement Base Styling, Layout, and Responsive Design with Tailwind CSS",
+      "description": "Set up Tailwind CSS (v3/4) build process. Implement the overall site layout, navigation, typography, color scheme (deep green, calming blues, orange accents), and ensure mobile-first responsive design for all core page templates.",
+      "details": "# Install Tailwind CSS\nnpm install -D tailwindcss\nnpx tailwindcss init\n\n# Configure tailwind.config.js\n# module.exports = {\n#   content: [\"./*.php\", \"./includes/**/*.php\", \"./public/**/*.js\"],\n#   theme: {\n#     extend: {\n#       colors: {\n#         'brand-green': '#1A472A', // Example, replace with actual\n#         'brand-blue': '#A0D2DB', // Example\n#         'brand-orange-accent': '#F5A623', // Example\n#       }\n#     },\n#   },\n#   plugins: [],\n# }\n\n# Create input CSS (e.g., src/input.css or assets/css/input.css):\n# @tailwind base;\n# @tailwind components;\n# @tailwind utilities;\n\n# Setup build script in package.json for Tailwind CLI:\n# \"scripts\": { \"build:css\": \"tailwindcss -i ./assets/css/input.css -o ./public/assets/css/style.css --watch\" }\n\n# Apply Tailwind classes to HTML elements in PHP files for header, footer, navigation, and basic page structure. Ensure responsive design using Tailwind's breakpoints.",
+      "testStrategy": "Verify Tailwind CSS compiles to `public/assets/css/style.css`. Inspect pages on different screen sizes (mobile, tablet, desktop) to ensure responsiveness. Check for consistent branding (colors, fonts) and adherence to UI principles (simple, elegant, intuitive). Basic WCAG checks for color contrast.",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Install Tailwind CSS Dependencies",
+          "description": "Install Tailwind CSS and its peer dependencies via npm/yarn and initialize the configuration file",
+          "dependencies": [],
+          "details": "Run npm install tailwindcss postcss autoprefixer, create postcss.config.js, and initialize tailwind.config.js with npx tailwindcss init",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Configure Build Process",
+          "description": "Set up the build pipeline to process Tailwind CSS directives and optimize output",
+          "dependencies": [
+            1
+          ],
+          "details": "Configure content paths in tailwind.config.js, set up build scripts, and ensure proper CSS processing order",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Define Color Palette and Typography",
+          "description": "Customize the default theme with project-specific colors and typography settings",
+          "dependencies": [
+            2
+          ],
+          "details": "Extend tailwind.config.js with custom colors, font families, and typography scale settings",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement Layout and Navigation Styles",
+          "description": "Create base layout components and navigation styles using Tailwind utility classes",
+          "dependencies": [
+            3
+          ],
+          "details": "Build responsive container layouts, navigation components, and common UI patterns using Tailwind classes",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure Responsive Breakpoints",
+          "description": "Set up and test responsive design breakpoints for different screen sizes",
+          "dependencies": [
+            4
+          ],
+          "details": "Define custom breakpoints in config, implement responsive utilities, and test across different viewport sizes",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Perform Accessibility Checks",
+          "description": "Ensure all styled components meet WCAG accessibility guidelines",
+          "dependencies": [
+            4,
+            5
+          ],
+          "details": "Test color contrast ratios, keyboard navigation, and screen reader compatibility of styled components",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Develop Core Static Content Pages",
+      "description": "Populate the HTML structures with content for Homepage (REQ-WEB-101 - hero, value prop, feature highlights, testimonials placeholder, latest-posts carousel placeholder), About (REQ-WEB-102), Product/Features (REQ-WEB-103), Pricing (REQ-WEB-104), Contact/Support (REQ-WEB-110), Investor Relations (REQ-WEB-111), and Legal pages (REQ-WEB-112 - Privacy, Terms, Cookie Policy).",
+      "details": "# For each page (index.php, about.php, product.php, etc.):\n# - Add specific content as per PRD REQ-WEB-101 to REQ-WEB-104, REQ-WEB-110 to REQ-WEB-112.\n# - Use Tailwind CSS classes for styling.\n# - Homepage (index.php): Implement hero section with CTA, feature highlights. Add placeholders for testimonials and latest-posts carousel (JS functionality for carousel can be deferred).\n# - About page (about.php): Add mission, values, founder story.\n# - Product/Features page (product.php): Detail CRM features with placeholders for visuals.\n# - Pricing page (pricing.php): Clearly communicate \"Free Forever\" tier and future model.\n# - Contact/Support page (contact.php): Provide help information.\n# - Investor Relations page (investors.php): Overview and a simple mailto link or placeholder for contact form.\n# - Legal pages (privacy.php, terms.php, cookies.php): Add initial content for policies.",
+      "testStrategy": "Review each page for content accuracy against PRD. Verify navigation between pages. Check CTAs are present and clear. Ensure pages are responsive and visually appealing. Validate HTML structure.",
+      "priority": "high",
+      "dependencies": [
+        1,
+        2
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Homepage Development",
+          "description": "Create and style the homepage with hero section, key features overview, and call-to-action components",
+          "dependencies": [],
+          "details": "Implement responsive hero section, feature highlights grid, testimonials carousel, and main CTA using Tailwind CSS. Include navigation menu and footer components.",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "About Page Implementation",
+          "description": "Design and develop the About page with company story, team section, and mission statement",
+          "dependencies": [
+            1
+          ],
+          "details": "Create company timeline, team member grid with photos and bios, mission/vision statements, and company values section using Tailwind styling.",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Product/Features Page Creation",
+          "description": "Build comprehensive product features page with detailed functionality breakdowns",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement feature comparison tables, interactive demos, technical specifications, and integration guides with responsive Tailwind layouts.",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Pricing Page Development",
+          "description": "Create pricing page with tiered plans, comparison table, and subscription options",
+          "dependencies": [
+            1
+          ],
+          "details": "Build pricing cards, feature comparison matrix, custom plan calculator, and FAQ section using Tailwind components.",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Contact/Support Page Setup",
+          "description": "Implement contact forms, support resources, and help center functionality",
+          "dependencies": [
+            1
+          ],
+          "details": "Create contact form with validation, knowledge base section, support ticket system integration, and live chat widget implementation.",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Investor Relations Page",
+          "description": "Develop investor relations page with financial reports and company updates",
+          "dependencies": [
+            1
+          ],
+          "details": "Build sections for annual reports, quarterly earnings, stock information, corporate governance, and investor news feed.",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Legal Pages Implementation",
+          "description": "Create privacy policy, terms of service, and other legal documentation pages",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement terms of service, privacy policy, cookie policy, and GDPR compliance pages with proper formatting and navigation.",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "PHP Backend Setup for Forms, API, and Database Connection",
+      "description": "Configure the PHP backend environment on Hostinger. Implement secure form handling for contact forms (e.g., Investor Relations contact form REQ-WEB-111). Set up MySQL database connection details. Establish a basic structure for future API endpoints.",
+      "details": "# Create PHP scripts for form processing (e.g., handle_investor_form.php).\n# - Validate and sanitize input data (filter_var, htmlspecialchars).\n# - Implement CSRF token generation and validation for forms.\n# - For Investor Relations form: Collect data, use SendGrid API (PHP library) to send email. Store SendGrid API key securely (e.g., environment variable on Hostinger or a config file outside web root).\n# - Provide user feedback (success/error message) via PHP sessions or query parameters.\n\n# db_config.php (store outside web root if possible, or protect with .htaccess):\n# <?php\n# define('DB_SERVER', 'your_hostinger_mysql_host');\n# define('DB_USERNAME', 'your_db_username');\n# define('DB_PASSWORD', 'your_db_password');\n# define('DB_NAME', 'your_db_name');\n# $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);\n# if($mysqli->connect_error) { die('Connection Error: ' . $mysqli->connect_error); }\n# ?>\n\n# Basic API structure (e.g., /api/v1/):\n# - Create an api.php router or individual endpoint files (e.g., api/chatbot.php).\n# - Use .htaccess for clean URLs if needed: RewriteRule ^api/v1/(.*)$ api.php?request=$1 [QSA,L]",
+      "testStrategy": "Test form submissions (e.g., Investor Relations form) ensuring data is processed, emails are sent via SendGrid, and security measures (validation, CSRF) work. Verify error handling. Confirm successful database connection using a test script. Check basic API routing if implemented.",
+      "priority": "high",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Configure PHP Environment",
+          "description": "Set up and configure PHP on the server with necessary extensions and security settings",
+          "dependencies": [],
+          "details": "Install PHP 8.x, configure php.ini for production, enable required modules, set memory limits, configure error reporting, implement basic security headers",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Form Handling",
+          "description": "Create secure form handling system with input validation and sanitization",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement input validation, sanitization filters, XSS prevention, file upload handling, and form submission processing logic",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Set up CSRF Protection",
+          "description": "Implement CSRF token generation and validation system",
+          "dependencies": [
+            2
+          ],
+          "details": "Create token generation mechanism, implement session handling, add token validation middleware, integrate with form handling system",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Integrate SendGrid",
+          "description": "Set up SendGrid API integration for email functionality",
+          "dependencies": [
+            1
+          ],
+          "details": "Install SendGrid SDK, configure API credentials, create email templates, implement email sending service, add retry mechanism",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure Database Connection",
+          "description": "Establish secure database connection and configuration",
+          "dependencies": [
+            1
+          ],
+          "details": "Set up database credentials, implement connection pooling, create database wrapper class, implement prepared statements, add connection error handling",
+          "status": "done"
+        },
+        {
+          "id": 6,
+          "title": "Create API Structure",
+          "description": "Design and implement API endpoint architecture",
+          "dependencies": [
+            3,
+            4,
+            5
+          ],
+          "details": "Define API routes, implement request/response handling, create middleware stack, add authentication layer, implement rate limiting",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Error Handling",
+          "description": "Set up comprehensive error handling and logging system",
+          "dependencies": [
+            6
+          ],
+          "details": "Create error handling middleware, implement logging system, add error reporting, create custom exception classes, implement fallback error pages",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Develop Dynamic Blog Index, Post Pages, and Homepage Carousel",
+      "description": "Create PHP scripts to dynamically generate the blog index page (REQ-WEB-105) with paginated lists of posts and individual blog post pages (REQ-WEB-106) displaying full article content, author, and date. Implement SEO-friendly URLs. Implement recent-posts carousel on homepage.",
+      "details": "# Database schema for `posts` (MySQL):\n# CREATE TABLE posts ( id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, slug VARCHAR(255) UNIQUE NOT NULL, content TEXT NOT NULL, author_name VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_published BOOLEAN DEFAULT TRUE );\n\n# blog.php (REQ-WEB-105 - Blog Index):\n# - Connect to DB (using db_config.php).\n# - Fetch published posts, order by created_at DESC.\n# - Implement pagination (e.g., 5 posts per page).\n# - Display post titles, excerpts, author, date, link to full post (e.g., post.php?slug=my-post-slug).\n\n# post.php (REQ-WEB-106 - Blog Post):\n# - Get slug from URL (e.g., $_GET['slug']). Sanitize it.\n# - Fetch specific post by slug.\n# - Display full content, author, date. Placeholder for comments section.\n\n# SEO-friendly URLs: Use .htaccess for Apache on Hostinger:\n# RewriteEngine On\n# RewriteRule ^blog$ blog.php [L]\n# RewriteRule ^blog/([^/]+)$ post.php?slug=$1 [L]\n\n# Homepage (index.php) - Latest Posts Carousel (REQ-WEB-101):\n# - PHP snippet to fetch 3-5 most recent published posts.\n# - Basic HTML/JS (vanilla JS) for carousel display (e.g., simple slider).",
+      "testStrategy": "Verify blog index page displays posts with pagination. Check individual blog post pages show correct content. Test SEO-friendly URLs. Manually add test posts to DB. Verify homepage carousel fetches and displays recent posts.",
+      "priority": "high",
+      "dependencies": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Blog Database Schema",
+          "description": "Create comprehensive database schema for blog posts, categories, tags, and user interactions",
+          "dependencies": [],
+          "details": "Define tables for posts, categories, tags, comments, authors, media; Include timestamps, SEO fields, and necessary indexes; Document relationships and constraints",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Blog Index with Pagination",
+          "description": "Develop paginated blog listing page with sorting and filtering capabilities",
+          "dependencies": [
+            1
+          ],
+          "details": "Set up API endpoints for paginated queries; Implement frontend pagination controls; Add sorting options; Create filtering system by categories/tags",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Create Individual Post Pages",
+          "description": "Build dynamic post detail pages with content rendering and related posts",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement post detail route; Set up markdown/rich text rendering; Add related posts functionality; Include social sharing features",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Configure SEO-friendly URLs",
+          "description": "Set up URL routing system with SEO-optimized slugs and metadata",
+          "dependencies": [
+            2,
+            3
+          ],
+          "details": "Implement slug generation system; Set up URL rewriting rules; Add metadata management; Configure sitemap generation",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Develop Homepage Carousel",
+          "description": "Create featured posts carousel for homepage with dynamic content loading",
+          "dependencies": [
+            2
+          ],
+          "details": "Build carousel component; Implement content loading logic; Add touch/swipe support; Create admin interface for featured post selection",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Test Dynamic Features",
+          "description": "Comprehensive testing of all dynamic blog features and performance optimization",
+          "dependencies": [
+            4,
+            5
+          ],
+          "details": "Write unit tests for components; Perform integration testing; Test SEO implementation; Conduct performance testing; Debug and optimize",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Implement User Authentication and Basic Gated Resource Center",
+      "description": "Implement a basic user registration and login system using PHP and MySQL. Create the Resource Center page (REQ-WEB-107) listing downloadable assets, requiring login for access. Implement email list opt-in on first download. Manual admin upload for resources (MVP).",
+      "details": "# DB schema `users` (MySQL):\n# CREATE TABLE users ( id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, password_hash VARCHAR(255) NOT NULL, first_name VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, email_opt_in BOOLEAN DEFAULT FALSE, first_download_done BOOLEAN DEFAULT FALSE );\n# DB schema `resources` (MySQL):\n# CREATE TABLE resources ( id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, description TEXT, file_path VARCHAR(255) NOT NULL, is_active BOOLEAN DEFAULT TRUE );\n\n# PHP scripts: register.php, login.php, logout.php. Use PHP sessions for auth.\n# - registration.php: Form, validate, hash password (password_hash()), store in DB.\n# - login.php: Form, validate, verify password (password_verify()), start session.\n# - Use HTTPS for all auth pages.\n\n# resources.php (REQ-WEB-107):\n# - Check session; if not logged in, redirect to login.php.\n# - List resources from DB.\n# - Download link (e.g., download.php?id=X).\n# download.php:\n# - Verify login. Check `first_download_done` flag for user.\n# - If first download & not opted-in: show email opt-in checkbox (updates `email_opt_in` and `first_download_done` in `users` table).\n# - Serve file securely (readfile(), appropriate headers). Store files in a non-web-accessible directory if possible, or use .htaccess to protect direct access.\n# Admin: Manually upload files and add DB entries via phpMyAdmin.",
+      "testStrategy": "Test registration, login, logout. Verify password hashing. Ensure Resource Center is login-protected. Test resource listing and download. Verify email opt-in prompt on first download and status saving. Ensure files download correctly and securely.",
+      "priority": "medium",
+      "dependencies": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design User Database Schema",
+          "description": "Create database schema for user accounts including fields for authentication, profile data, and email preferences",
+          "dependencies": [],
+          "details": "Include fields: user_id, email, password_hash, name, join_date, email_opt_in, account_status, last_login",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Design Resource Database Schema",
+          "description": "Create database schema for downloadable resources including metadata and access controls",
+          "dependencies": [],
+          "details": "Include fields: resource_id, title, description, file_path, upload_date, access_level, download_count",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Implement User Registration Form",
+          "description": "Create and validate registration form with email verification and password requirements",
+          "dependencies": [
+            1
+          ],
+          "details": "Include email validation, password strength checks, duplicate account prevention, and CSRF protection",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Implement User Login System",
+          "description": "Build secure login form with authentication and session initialization",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Implement password hashing, rate limiting, failed attempt tracking, and remember-me functionality",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Develop Session Management",
+          "description": "Implement secure session handling with timeout and security measures",
+          "dependencies": [
+            4
+          ],
+          "details": "Include session encryption, idle timeout, secure cookie handling, and session regeneration",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Create Resource Access Control",
+          "description": "Implement permission system for resource downloads based on user status",
+          "dependencies": [
+            2,
+            5
+          ],
+          "details": "Define access levels, implement download tracking, and handle unauthorized access attempts",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Implement Email Opt-in System",
+          "description": "Build email preference management system with double opt-in verification",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Include preference toggles, confirmation emails, unsubscribe functionality, and audit logging",
+          "status": "pending"
+        },
+        {
+          "id": 8,
+          "title": "Create Admin Upload Interface",
+          "description": "Develop secure interface for administrators to upload and manage resources",
+          "dependencies": [
+            2,
+            6
+          ],
+          "details": "Include file validation, virus scanning, metadata input, and access level assignment",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Integrate AI Chatbot (OpenRouter - Basic Q&A & Site Search)",
+      "description": "Integrate a floating AI chatbot widget (REQ-AI-201) on all pages using vanilla JS. Connect to OpenRouter API (REQ-AI-202) via a PHP backend script for Q&A and intelligent site search/link suggestions (REQ-AI-204).",
+      "details": "# Frontend (main.js):\n# - Create HTML for floating chat widget (toggle button, chat window, input field, messages area).\n# - On message submit, use Fetch API to send query to a PHP backend endpoint (e.g., api/chatbot.php).\n\n# Backend (api/chatbot.php):\n# - Receive user query (JSON POST request).\n# - Sanitize input.\n# - Construct prompt for OpenRouter. Example: \"You are Omnipotency.ai's assistant. Answer based on our site (product, pricing, blog). Question: [USER_QUERY] Provide relevant site links like /product or /blog/article-name.\"\n# - Use PHP cURL to call OpenRouter API (model choice as per OpenRouter docs, e.g., a fast, capable model).\n# - Store OpenRouter API key securely (environment variable or non-web-accessible config).\n# - Process response, extract text and potential links.\n# - Return JSON: { \"reply\": \"...\", \"links\": [{ \"title\": \"Pricing\", \"url\": \"/pricing\" }] }.\n\n# Frontend (main.js):\n# - Append user message and bot reply to chat window. Render links if provided.\n# - Include chatbot JS/HTML structure in common footer (e.g. includes/footer.php).",
+      "testStrategy": "Verify chatbot widget is on all pages. Test Q&A about CRM features, pricing (ST-WEB-CHAT-201). Check if bot provides relevant answers and suggests site links. Monitor OpenRouter API calls. Ensure API key security.",
+      "priority": "medium",
+      "dependencies": [
+        1,
+        2,
+        4
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Chatbot UI Components",
+          "description": "Create responsive chat interface components including message bubbles, input field, and send button",
+          "dependencies": [],
+          "details": "Implement chat window container, message history area, user input section, and styling for both user and bot messages using React components",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement OpenRouter API Integration",
+          "description": "Set up backend endpoints and services for OpenRouter API communication",
+          "dependencies": [],
+          "details": "Create API wrapper, handle authentication, implement request/response handling, and establish error management protocols",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Secure API Key Management",
+          "description": "Implement secure storage and handling of OpenRouter API keys",
+          "dependencies": [
+            2
+          ],
+          "details": "Set up environment variables, implement key rotation system, and add encryption for API key storage",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Response Processing System",
+          "description": "Create system to handle, format, and display chat responses",
+          "dependencies": [
+            1,
+            2
+          ],
+          "details": "Implement message parsing, formatting, and real-time updates for chat interface",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Implement Suggested Links Feature",
+          "description": "Add functionality to display and manage suggested links in chat responses",
+          "dependencies": [
+            4
+          ],
+          "details": "Create link extraction logic, implement link preview components, and handle link interaction events",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Comprehensive Testing Implementation",
+          "description": "Develop and execute test suite for all chatbot functionalities",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "details": "Create unit tests, integration tests, and end-to-end tests for all chat features and pages",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Implement Blog Commenting System with Moderation",
+      "description": "Add commenting functionality to blog posts (REQ-WEB-106). Require login to comment. Implement a simple CAPTCHA. Develop a PHP-based moderation queue for admins.",
+      "details": "# DB schema `comments` (MySQL):\n# CREATE TABLE comments ( id INT AUTO_INCREMENT PRIMARY KEY, post_id INT NOT NULL, user_id INT NOT NULL, comment_text TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_approved BOOLEAN DEFAULT FALSE, FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE );\n\n# post.php (REQ-WEB-106):\n# - Display approved comments for the post.\n# - If user logged in (check session):\n#   - Show comment form (textarea).\n#   - Simple CAPTCHA: e.g., store a random number in session, ask user to type it, or basic math question.\n# - Form submits to process_comment.php (POST).\n# process_comment.php:\n# - Verify login, CAPTCHA, sanitize input.\n# - Store comment in `comments` table with `is_approved = FALSE`.\n# - Redirect back to post with success/error message.\n\n# admin_moderate_comments.php (requires admin role/login - simple check for MVP, e.g. specific user ID):\n# - List comments with `is_approved = FALSE`.\n# - Options to approve (set `is_approved = TRUE`) or delete.",
+      "testStrategy": "Verify comment form appears for logged-in users on blog posts. Test CAPTCHA. Submit comments; check they go to moderation queue (not public). Test admin approval/deletion. Approved comments should display. Non-logged-in users should not see comment form.",
+      "priority": "medium",
+      "dependencies": [
+        5,
+        6
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Design Comments Database Schema",
+          "description": "Create database schema for storing comments with necessary fields and relationships",
+          "dependencies": [],
+          "details": "Define tables for comments, including fields for content, timestamp, user ID, post ID, status, parent comment ID for threading, and IP address",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Implement Comment Display Component",
+          "description": "Create frontend component to display comments in a threaded view",
+          "dependencies": [
+            1
+          ],
+          "details": "Build React component for rendering comments, implement threading logic, and add pagination/infinite scroll",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Build Comment Submission Form",
+          "description": "Create form with CAPTCHA integration for comment submission",
+          "dependencies": [
+            1
+          ],
+          "details": "Implement form validation, CAPTCHA integration, and basic spam detection",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Develop Comment Processing Backend",
+          "description": "Create API endpoints for handling comment submission and storage",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Build API endpoints, implement sanitization, and create storage procedures with proper error handling",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Create Moderation Queue System",
+          "description": "Implement backend system for comment moderation workflow",
+          "dependencies": [
+            1,
+            4
+          ],
+          "details": "Build moderation queue database structure, API endpoints, and filtering system",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Admin Moderation Interface",
+          "description": "Create admin interface for comment approval and deletion",
+          "dependencies": [
+            5
+          ],
+          "details": "Build admin dashboard with bulk actions, filtering, and moderation history",
+          "status": "pending"
+        },
+        {
+          "id": 7,
+          "title": "Configure User Access Control",
+          "description": "Implement role-based access control for comment system",
+          "dependencies": [
+            4,
+            6
+          ],
+          "details": "Set up user roles, permissions, and authentication integration for comment system",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Implement Compliance, Analytics, and Finalize Email Integration",
+      "description": "Implement GDPR/US privacy compliance: cookie consent banner (custom JS or GTM-based) blocking non-essential cookies until approval. Update legal pages (REQ-WEB-112). Integrate Google Tag Manager for GA4 & pixels. Configure SendGrid for any remaining transactional emails.",
+      "details": "# Cookie Consent Banner (vanilla JS in main.js or via GTM):\n# - Display banner on first visit. Options: Accept All, Reject Non-Essential, Preferences.\n# - Store consent in localStorage.\n# - Conditionally load GTM or specific tags based on consent.\n# - Example: `if(localStorage.getItem('cookieConsent') === 'accepted') { // load GTM }`\n\n# Legal Pages (privacy.php, terms.php, cookies.php - REQ-WEB-112):\n# - Review and finalize content detailing data practices, cookie usage, EU storage (if applicable), user rights.\n\n# Google Tag Manager (GTM) Setup:\n# - Add GTM container snippet to all pages (e.g., in includes/header.php), respecting consent.\n# - Configure GA4 tag in GTM. Configure other marketing pixels (e.g., Facebook) in GTM, ensuring they fire based on consent status.\n# - Ensure UTM tracking can be captured by GA4.\n\n# SendGrid (PHP API):\n# - Confirm all transactional emails (registration, contact forms, password reset if implemented) use SendGrid.\n# - Ensure marketing email opt-ins (e.g., from resource downloads) are correctly managed (e.g., adding to a specific SendGrid marketing list).",
+      "testStrategy": "Verify cookie banner functions (blocks/allows scripts based on choice). Check GTM loads, GA4/pixels fire per consent. Review legal pages. Test all transactional emails. Verify marketing opt-in process.",
+      "priority": "medium",
+      "dependencies": [
+        3,
+        4,
+        6
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement Cookie Consent Banner",
+          "description": "Design and implement a GDPR-compliant cookie consent banner with accept/reject options",
+          "dependencies": [],
+          "details": "Create responsive banner component, implement cookie storage logic, add preference management UI, ensure banner persists until user choice",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Update Legal Pages",
+          "description": "Review and update privacy policy, terms of service, and cookie policy pages",
+          "dependencies": [
+            1
+          ],
+          "details": "Include cookie usage details, data processing information, user rights section, update last modified dates",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Set Up Google Tag Manager",
+          "description": "Install and configure Google Tag Manager container across all pages",
+          "dependencies": [
+            1
+          ],
+          "details": "Create GTM account, add container code, set up consent-based trigger rules, test tag firing conditions",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Configure GA4 and Marketing Pixels",
+          "description": "Set up GA4 property and implement marketing tracking pixels",
+          "dependencies": [
+            3
+          ],
+          "details": "Configure GA4 events, set up conversion tracking, implement Facebook Pixel, ensure proper consent handling",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Configure SendGrid Integration",
+          "description": "Set up SendGrid for transactional email delivery",
+          "dependencies": [],
+          "details": "Configure API keys, set up email templates, implement tracking, test delivery and bounce handling",
+          "status": "pending"
+        },
+        {
+          "id": 6,
+          "title": "Implement Marketing Opt-in Flows",
+          "description": "Create and validate marketing communication opt-in processes",
+          "dependencies": [
+            2,
+            5
+          ],
+          "details": "Design opt-in forms, implement double opt-in logic, create preference center, test subscription workflows",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Create Documentation Hub Structure and Community Placeholder",
+      "description": "Develop the basic structure for the Documentation Hub (REQ-WEB-108) with an entry page and template for individual doc pages. Create a placeholder page for the Community forum (REQ-WEB-109). Add placeholders for embedded YouTube videos for tutorials.",
+      "details": "# Documentation Hub (REQ-WEB-108):\n# - docs.php (Entry page): Layout with sidebar for navigation (categories/topics) and main content area.\n# - doc_article.php (Template for individual doc pages):\n#   - Takes a parameter (e.g., ?topic=getting-started) to load content.\n#   - Content can be static PHP includes initially: `<?php include 'docs_content/getting-started.html'; ?>`\n#   - Structure for title, content (rich text, images, cross-links).\n#   - Placeholder for embedded YouTube videos (using standard YouTube iframe embed code).\n#   - Example URL structure: /docs or /docs.php, /docs/article-slug or /doc_article.php?topic=article-slug. Use .htaccess for cleaner URLs.\n\n# Community Forum Placeholder (REQ-WEB-109):\n# - community.php: Static page with message about future forum, benefits, and optional interest form (simple mailto or link to contact page).\n\n# Support (REQ-WEB-110, REQ-WEB-5.7):\n# - Ensure contact/support page clearly links to docs, chatbot, and mentions GitHub for technical issues.",
+      "testStrategy": "Verify Documentation Hub entry page and sample doc pages render with navigation. Check community placeholder page displays intended message. Confirm placeholders for YouTube videos are present. Ensure support information is clear and accessible.",
+      "priority": "low",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Create Documentation Hub Entry Page",
+          "description": "Design and implement the main landing page for the documentation hub",
+          "dependencies": [],
+          "details": "Create responsive layout, add welcome message, implement search bar placeholder, add category cards for main documentation sections",
+          "status": "pending"
+        },
+        {
+          "id": 2,
+          "title": "Design Documentation Article Template",
+          "description": "Create reusable template for documentation articles",
+          "dependencies": [
+            1
+          ],
+          "details": "Define header structure, content area styling, code block formatting, table styles, and responsive breakpoints",
+          "status": "pending"
+        },
+        {
+          "id": 3,
+          "title": "Implement Navigation Sidebar",
+          "description": "Build collapsible navigation sidebar for documentation sections",
+          "dependencies": [
+            1
+          ],
+          "details": "Create expandable menu structure, add section links, implement collapse/expand functionality, ensure mobile responsiveness",
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "title": "Add YouTube Video Placeholders",
+          "description": "Create embedded video sections with placeholders",
+          "dependencies": [
+            2
+          ],
+          "details": "Design video container component, implement responsive iframe wrapper, add placeholder thumbnails and play buttons",
+          "status": "pending"
+        },
+        {
+          "id": 5,
+          "title": "Build Community Forum Placeholder",
+          "description": "Create static community forum landing page",
+          "dependencies": [
+            1,
+            3
+          ],
+          "details": "Design forum layout, add category sections, create dummy thread listings, implement basic forum header and footer",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Implement Advanced SEO, Schema, and Site Optimization",
+      "description": "Set up comprehensive SEO, structured data schema, sitemap generation, search engine submission, and internal linking strategy to maximize visibility and crawlability.",
+      "details": "1. Create XML sitemap and robots.txt for proper search engine crawling\n2. Implement structured data/schema markup for rich results\n3. Set up meta tags, Open Graph, and Twitter cards for social sharing\n4. Create a comprehensive internal linking strategy\n5. Submit the site to Google, Bing, and other search engines\n6. Add example dashboard screenshots and UI mockups\n7. Set up SEO monitoring and performance metrics",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [
+        2,
+        3
+      ],
+      "priority": "medium",
+      "subtasks": [
+        {
+          "id": 1,
+          "title": "Implement XML Sitemap and robots.txt Configuration",
+          "description": "Create and configure XML sitemap with dynamic generation and robots.txt file for search engine crawling directives",
+          "dependencies": [],
+          "details": "Use a sitemap generator plugin/script to auto-generate XML sitemap. Configure robots.txt to allow crawling of public pages and disallow sensitive directories. Ensure sitemap is updated automatically with content changes.",
+          "status": "pending",
+          "testStrategy": "Verify sitemap accessibility via /sitemap.xml. Test robots.txt using Google Search Console's robots.txt tester"
+        },
+        {
+          "id": 2,
+          "title": "Configure Meta Tags and Social Media Cards",
+          "description": "Implement standard meta tags, Open Graph protocol, and Twitter card markup across all pages",
+          "dependencies": [],
+          "details": "Add meta description, title tags, and canonical URLs. Implement Open Graph tags for Facebook/LinkedIn and Twitter Cards using structured HTML meta elements. Create template system for consistent implementation across pages.",
+          "status": "pending",
+          "testStrategy": "Use Lighthouse SEO audit and social media sharing preview tools to validate markup"
+        },
+        {
+          "id": 3,
+          "title": "Deploy Structured Data Schema Markup",
+          "description": "Implement JSON-LD schema markup for key content types and pages",
+          "dependencies": [
+            2
+          ],
+          "details": "Add Organization, Website, and Article schemas to appropriate pages. Implement Product/Breadcrumb schemas for e-commerce sections. Use Google's Structured Data Markup Helper for validation.",
+          "status": "pending",
+          "testStrategy": "Test with Google Rich Results Test and Schema Markup Validator"
+        },
+        {
+          "id": 4,
+          "title": "Develop Internal Linking Strategy",
+          "description": "Create and implement systematic internal linking architecture",
+          "dependencies": [
+            1
+          ],
+          "details": "Analyze content hierarchy to establish pillar pages. Implement contextual linking in content body. Create related posts/widgets. Use automated linking plugins with manual curation for important pages.",
+          "status": "pending",
+          "testStrategy": "Use screamingfrog to verify link structure and check for orphaned pages"
+        },
+        {
+          "id": 5,
+          "title": "Search Engine Submission and Verification",
+          "description": "Submit sitemap to major search engines and verify site ownership",
+          "dependencies": [
+            1
+          ],
+          "details": "Create accounts in Google Search Console and Bing Webmaster Tools. Submit XML sitemap through both platforms. Implement DNS-based verification for search engine validation.",
+          "status": "pending",
+          "testStrategy": "Confirm index coverage reports in search consoles within 72 hours"
+        },
+        {
+          "id": 6,
+          "title": "Optimize Visual Content for SEO",
+          "description": "Implement optimized images, screenshots, and UI mockups with SEO-friendly markup",
+          "dependencies": [
+            2
+          ],
+          "details": "Add dashboard screenshots with descriptive alt text. Implement responsive images with modern formats (WebP). Create image sitemap section. Optimize LCP metrics through compression and lazy loading.",
+          "status": "pending",
+          "testStrategy": "Use Lighthouse performance audit and check image indexing in search console"
+        },
+        {
+          "id": 7,
+          "title": "Configure SEO Monitoring and Analytics",
+          "description": "Set up ongoing SEO performance tracking and alert system",
+          "dependencies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "details": "Integrate Google Search Console with Google Analytics. Set up rank tracking for target keywords. Configure automated reports for organic traffic, crawl errors, and index coverage. Implement UTM tracking for marketing campaigns.",
+          "status": "pending",
+          "testStrategy": "Verify data collection in analytics platforms and test alert triggers"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Implement Knowledge Base, Support Ticketing, and Live Chat",
+      "description": "Build a comprehensive support system including knowledge base documentation, customer support ticket system, and live chat functionality for real-time assistance.",
+      "details": "Create a searchable knowledge base with categorized articles and FAQs. Integrate a support ticket system to track and manage customer inquiries. Implement live chat functionality with agent availability indicators and chatbot fallback. Ensure all components are mobile-responsive and accessible. Set up analytics to track usage patterns and identify knowledge gaps.",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [
+        3,
+        5
+      ],
+      "priority": "medium",
+      "subtasks": []
+    }
+  ]
+}

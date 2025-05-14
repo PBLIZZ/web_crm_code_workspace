@@ -1,0 +1,71 @@
+# Task ID: 8
+# Title: Implement Blog Commenting System with Moderation
+# Status: pending
+# Dependencies: 5, 6
+# Priority: medium
+# Description: Add commenting functionality to blog posts (REQ-WEB-106). Require login to comment. Implement a simple CAPTCHA. Develop a PHP-based moderation queue for admins.
+# Details:
+# DB schema `comments` (MySQL):
+# CREATE TABLE comments ( id INT AUTO_INCREMENT PRIMARY KEY, post_id INT NOT NULL, user_id INT NOT NULL, comment_text TEXT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_approved BOOLEAN DEFAULT FALSE, FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE );
+
+# post.php (REQ-WEB-106):
+# - Display approved comments for the post.
+# - If user logged in (check session):
+#   - Show comment form (textarea).
+#   - Simple CAPTCHA: e.g., store a random number in session, ask user to type it, or basic math question.
+# - Form submits to process_comment.php (POST).
+# process_comment.php:
+# - Verify login, CAPTCHA, sanitize input.
+# - Store comment in `comments` table with `is_approved = FALSE`.
+# - Redirect back to post with success/error message.
+
+# admin_moderate_comments.php (requires admin role/login - simple check for MVP, e.g. specific user ID):
+# - List comments with `is_approved = FALSE`.
+# - Options to approve (set `is_approved = TRUE`) or delete.
+
+# Test Strategy:
+Verify comment form appears for logged-in users on blog posts. Test CAPTCHA. Submit comments; check they go to moderation queue (not public). Test admin approval/deletion. Approved comments should display. Non-logged-in users should not see comment form.
+
+# Subtasks:
+## 1. Design Comments Database Schema [pending]
+### Dependencies: None
+### Description: Create database schema for storing comments with necessary fields and relationships
+### Details:
+Define tables for comments, including fields for content, timestamp, user ID, post ID, status, parent comment ID for threading, and IP address
+
+## 2. Implement Comment Display Component [pending]
+### Dependencies: 8.1
+### Description: Create frontend component to display comments in a threaded view
+### Details:
+Build React component for rendering comments, implement threading logic, and add pagination/infinite scroll
+
+## 3. Build Comment Submission Form [pending]
+### Dependencies: 8.1
+### Description: Create form with CAPTCHA integration for comment submission
+### Details:
+Implement form validation, CAPTCHA integration, and basic spam detection
+
+## 4. Develop Comment Processing Backend [pending]
+### Dependencies: 8.1, 8.3
+### Description: Create API endpoints for handling comment submission and storage
+### Details:
+Build API endpoints, implement sanitization, and create storage procedures with proper error handling
+
+## 5. Create Moderation Queue System [pending]
+### Dependencies: 8.1, 8.4
+### Description: Implement backend system for comment moderation workflow
+### Details:
+Build moderation queue database structure, API endpoints, and filtering system
+
+## 6. Implement Admin Moderation Interface [pending]
+### Dependencies: 8.5
+### Description: Create admin interface for comment approval and deletion
+### Details:
+Build admin dashboard with bulk actions, filtering, and moderation history
+
+## 7. Configure User Access Control [pending]
+### Dependencies: 8.4, 8.6
+### Description: Implement role-based access control for comment system
+### Details:
+Set up user roles, permissions, and authentication integration for comment system
+

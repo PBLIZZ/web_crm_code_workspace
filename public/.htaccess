@@ -1,0 +1,29 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# --- Standard Rules to protect sensitive files ---
+# Deny access to .env file (if it's in public_html)
+<Files ".env">
+  Require all denied
+</Files>
+# Deny access to .htaccess itself
+<Files ".htaccess">
+  Require all denied
+</Files>
+# Deny access to composer.json, package.json etc. if they end up in public_html
+<FilesMatch "^(\.git|composer\.json|package\.json|tailwind\.config\.js|postcss\.config\.js|README\.md|LICENSE|src|config|utils|node_modules|vendor)">
+    Require all denied
+</FilesMatch>
+
+# --- Routing Rules ---
+# Do not rewrite if the request is for an existing file
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+# Do not rewrite if the request is for an existing directory
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite all other requests to index.php
+RewriteRule ^ index.php [L]
+
+# --- Optional: Disable Directory Listings ---
+Options -Indexes

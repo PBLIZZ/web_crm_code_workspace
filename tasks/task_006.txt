@@ -1,0 +1,79 @@
+# Task ID: 6
+# Title: Implement User Authentication and Basic Gated Resource Center
+# Status: pending
+# Dependencies: 1, 2, 3, 4
+# Priority: medium
+# Description: Implement a basic user registration and login system using PHP and MySQL. Create the Resource Center page (REQ-WEB-107) listing downloadable assets, requiring login for access. Implement email list opt-in on first download. Manual admin upload for resources (MVP).
+# Details:
+# DB schema `users` (MySQL):
+# CREATE TABLE users ( id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) UNIQUE NOT NULL, password_hash VARCHAR(255) NOT NULL, first_name VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, email_opt_in BOOLEAN DEFAULT FALSE, first_download_done BOOLEAN DEFAULT FALSE );
+# DB schema `resources` (MySQL):
+# CREATE TABLE resources ( id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, description TEXT, file_path VARCHAR(255) NOT NULL, is_active BOOLEAN DEFAULT TRUE );
+
+# PHP scripts: register.php, login.php, logout.php. Use PHP sessions for auth.
+# - registration.php: Form, validate, hash password (password_hash()), store in DB.
+# - login.php: Form, validate, verify password (password_verify()), start session.
+# - Use HTTPS for all auth pages.
+
+# resources.php (REQ-WEB-107):
+# - Check session; if not logged in, redirect to login.php.
+# - List resources from DB.
+# - Download link (e.g., download.php?id=X).
+# download.php:
+# - Verify login. Check `first_download_done` flag for user.
+# - If first download & not opted-in: show email opt-in checkbox (updates `email_opt_in` and `first_download_done` in `users` table).
+# - Serve file securely (readfile(), appropriate headers). Store files in a non-web-accessible directory if possible, or use .htaccess to protect direct access.
+# Admin: Manually upload files and add DB entries via phpMyAdmin.
+
+# Test Strategy:
+Test registration, login, logout. Verify password hashing. Ensure Resource Center is login-protected. Test resource listing and download. Verify email opt-in prompt on first download and status saving. Ensure files download correctly and securely.
+
+# Subtasks:
+## 1. Design User Database Schema [pending]
+### Dependencies: None
+### Description: Create database schema for user accounts including fields for authentication, profile data, and email preferences
+### Details:
+Include fields: user_id, email, password_hash, name, join_date, email_opt_in, account_status, last_login
+
+## 2. Design Resource Database Schema [pending]
+### Dependencies: None
+### Description: Create database schema for downloadable resources including metadata and access controls
+### Details:
+Include fields: resource_id, title, description, file_path, upload_date, access_level, download_count
+
+## 3. Implement User Registration Form [pending]
+### Dependencies: 6.1
+### Description: Create and validate registration form with email verification and password requirements
+### Details:
+Include email validation, password strength checks, duplicate account prevention, and CSRF protection
+
+## 4. Implement User Login System [pending]
+### Dependencies: 6.1, 6.3
+### Description: Build secure login form with authentication and session initialization
+### Details:
+Implement password hashing, rate limiting, failed attempt tracking, and remember-me functionality
+
+## 5. Develop Session Management [pending]
+### Dependencies: 6.4
+### Description: Implement secure session handling with timeout and security measures
+### Details:
+Include session encryption, idle timeout, secure cookie handling, and session regeneration
+
+## 6. Create Resource Access Control [pending]
+### Dependencies: 6.2, 6.5
+### Description: Implement permission system for resource downloads based on user status
+### Details:
+Define access levels, implement download tracking, and handle unauthorized access attempts
+
+## 7. Implement Email Opt-in System [pending]
+### Dependencies: 6.1, 6.3
+### Description: Build email preference management system with double opt-in verification
+### Details:
+Include preference toggles, confirmation emails, unsubscribe functionality, and audit logging
+
+## 8. Create Admin Upload Interface [pending]
+### Dependencies: 6.2, 6.6
+### Description: Develop secure interface for administrators to upload and manage resources
+### Details:
+Include file validation, virus scanning, metadata input, and access level assignment
+

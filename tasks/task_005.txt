@@ -1,0 +1,70 @@
+# Task ID: 5
+# Title: Develop Dynamic Blog Index, Post Pages, and Homepage Carousel
+# Status: pending
+# Dependencies: 1, 2, 3, 4
+# Priority: high
+# Description: Create PHP scripts to dynamically generate the blog index page (REQ-WEB-105) with paginated lists of posts and individual blog post pages (REQ-WEB-106) displaying full article content, author, and date. Implement SEO-friendly URLs. Implement recent-posts carousel on homepage.
+# Details:
+# Database schema for `posts` (MySQL):
+# CREATE TABLE posts ( id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255) NOT NULL, slug VARCHAR(255) UNIQUE NOT NULL, content TEXT NOT NULL, author_name VARCHAR(100), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, is_published BOOLEAN DEFAULT TRUE );
+
+# blog.php (REQ-WEB-105 - Blog Index):
+# - Connect to DB (using db_config.php).
+# - Fetch published posts, order by created_at DESC.
+# - Implement pagination (e.g., 5 posts per page).
+# - Display post titles, excerpts, author, date, link to full post (e.g., post.php?slug=my-post-slug).
+
+# post.php (REQ-WEB-106 - Blog Post):
+# - Get slug from URL (e.g., $_GET['slug']). Sanitize it.
+# - Fetch specific post by slug.
+# - Display full content, author, date. Placeholder for comments section.
+
+# SEO-friendly URLs: Use .htaccess for Apache on Hostinger:
+# RewriteEngine On
+# RewriteRule ^blog$ blog.php [L]
+# RewriteRule ^blog/([^/]+)$ post.php?slug=$1 [L]
+
+# Homepage (index.php) - Latest Posts Carousel (REQ-WEB-101):
+# - PHP snippet to fetch 3-5 most recent published posts.
+# - Basic HTML/JS (vanilla JS) for carousel display (e.g., simple slider).
+
+# Test Strategy:
+Verify blog index page displays posts with pagination. Check individual blog post pages show correct content. Test SEO-friendly URLs. Manually add test posts to DB. Verify homepage carousel fetches and displays recent posts.
+
+# Subtasks:
+## 1. Design Blog Database Schema [pending]
+### Dependencies: None
+### Description: Create comprehensive database schema for blog posts, categories, tags, and user interactions
+### Details:
+Define tables for posts, categories, tags, comments, authors, media; Include timestamps, SEO fields, and necessary indexes; Document relationships and constraints
+
+## 2. Implement Blog Index with Pagination [pending]
+### Dependencies: 5.1
+### Description: Develop paginated blog listing page with sorting and filtering capabilities
+### Details:
+Set up API endpoints for paginated queries; Implement frontend pagination controls; Add sorting options; Create filtering system by categories/tags
+
+## 3. Create Individual Post Pages [pending]
+### Dependencies: 5.1
+### Description: Build dynamic post detail pages with content rendering and related posts
+### Details:
+Implement post detail route; Set up markdown/rich text rendering; Add related posts functionality; Include social sharing features
+
+## 4. Configure SEO-friendly URLs [pending]
+### Dependencies: 5.2, 5.3
+### Description: Set up URL routing system with SEO-optimized slugs and metadata
+### Details:
+Implement slug generation system; Set up URL rewriting rules; Add metadata management; Configure sitemap generation
+
+## 5. Develop Homepage Carousel [pending]
+### Dependencies: 5.2
+### Description: Create featured posts carousel for homepage with dynamic content loading
+### Details:
+Build carousel component; Implement content loading logic; Add touch/swipe support; Create admin interface for featured post selection
+
+## 6. Test Dynamic Features [pending]
+### Dependencies: 5.4, 5.5
+### Description: Comprehensive testing of all dynamic blog features and performance optimization
+### Details:
+Write unit tests for components; Perform integration testing; Test SEO implementation; Conduct performance testing; Debug and optimize
+

@@ -1,0 +1,65 @@
+# Task ID: 9
+# Title: Implement Compliance, Analytics, and Finalize Email Integration
+# Status: pending
+# Dependencies: 3, 4, 6
+# Priority: medium
+# Description: Implement GDPR/US privacy compliance: cookie consent banner (custom JS or GTM-based) blocking non-essential cookies until approval. Update legal pages (REQ-WEB-112). Integrate Google Tag Manager for GA4 & pixels. Configure SendGrid for any remaining transactional emails.
+# Details:
+# Cookie Consent Banner (vanilla JS in main.js or via GTM):
+# - Display banner on first visit. Options: Accept All, Reject Non-Essential, Preferences.
+# - Store consent in localStorage.
+# - Conditionally load GTM or specific tags based on consent.
+# - Example: `if(localStorage.getItem('cookieConsent') === 'accepted') { // load GTM }`
+
+# Legal Pages (privacy.php, terms.php, cookies.php - REQ-WEB-112):
+# - Review and finalize content detailing data practices, cookie usage, EU storage (if applicable), user rights.
+
+# Google Tag Manager (GTM) Setup:
+# - Add GTM container snippet to all pages (e.g., in includes/header.php), respecting consent.
+# - Configure GA4 tag in GTM. Configure other marketing pixels (e.g., Facebook) in GTM, ensuring they fire based on consent status.
+# - Ensure UTM tracking can be captured by GA4.
+
+# SendGrid (PHP API):
+# - Confirm all transactional emails (registration, contact forms, password reset if implemented) use SendGrid.
+# - Ensure marketing email opt-ins (e.g., from resource downloads) are correctly managed (e.g., adding to a specific SendGrid marketing list).
+
+# Test Strategy:
+Verify cookie banner functions (blocks/allows scripts based on choice). Check GTM loads, GA4/pixels fire per consent. Review legal pages. Test all transactional emails. Verify marketing opt-in process.
+
+# Subtasks:
+## 1. Implement Cookie Consent Banner [pending]
+### Dependencies: None
+### Description: Design and implement a GDPR-compliant cookie consent banner with accept/reject options
+### Details:
+Create responsive banner component, implement cookie storage logic, add preference management UI, ensure banner persists until user choice
+
+## 2. Update Legal Pages [pending]
+### Dependencies: 9.1
+### Description: Review and update privacy policy, terms of service, and cookie policy pages
+### Details:
+Include cookie usage details, data processing information, user rights section, update last modified dates
+
+## 3. Set Up Google Tag Manager [pending]
+### Dependencies: 9.1
+### Description: Install and configure Google Tag Manager container across all pages
+### Details:
+Create GTM account, add container code, set up consent-based trigger rules, test tag firing conditions
+
+## 4. Configure GA4 and Marketing Pixels [pending]
+### Dependencies: 9.3
+### Description: Set up GA4 property and implement marketing tracking pixels
+### Details:
+Configure GA4 events, set up conversion tracking, implement Facebook Pixel, ensure proper consent handling
+
+## 5. Configure SendGrid Integration [pending]
+### Dependencies: None
+### Description: Set up SendGrid for transactional email delivery
+### Details:
+Configure API keys, set up email templates, implement tracking, test delivery and bounce handling
+
+## 6. Implement Marketing Opt-in Flows [pending]
+### Dependencies: 9.2, 9.5
+### Description: Create and validate marketing communication opt-in processes
+### Details:
+Design opt-in forms, implement double opt-in logic, create preference center, test subscription workflows
+

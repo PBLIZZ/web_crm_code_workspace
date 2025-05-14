@@ -65,7 +65,7 @@ $mobileLinkActiveColor = "text-brand-orange-500";
 <header id="main-header" class="sticky top-0 z-50 bg-brand-green-800 bg-opacity-90 backdrop-blur-md shadow-lg">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      <a href="index.php" class="flex items-center gap-2 text-xl no-underline hover:opacity-90">
+      <a href="/" class="flex items-center gap-2 text-xl no-underline hover:opacity-90">
         <img src="<?php echo BASE_URL; ?>/assets/img/logo.png" alt="Omnipotency AI logo" class="h-10 sm:h-12 w-auto">
         <span class="font-semibold text-brand-teal-400">Omnipotency AI</span>
       </a>

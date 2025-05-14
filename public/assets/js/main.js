@@ -1,5 +1,39 @@
 // public/assets/js/main.js
 
+// --- SCROLL TO WAITLIST AND FOCUS EMAIL FUNCTION ---
+function scrollToWaitlistAndFocus() {
+    // Get the waitlist form element
+    const waitlistForm = document.getElementById('footerWaitlistForm');
+    const emailInput = waitlistForm?.querySelector('input[type="email"]');
+    
+    if (waitlistForm) {
+        // Smooth scroll to the form
+        waitlistForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Focus the email input after scrolling is complete (with a small delay)
+        setTimeout(() => {
+            if (emailInput) {
+                emailInput.focus();
+            }
+        }, 800); // Adjust the delay as needed to ensure scrolling is complete
+    }
+}
+
+// Handle clicks on pricing buttons that link to #waitlist-footer
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all links with href="#waitlist-footer"
+    const waitlistLinks = document.querySelectorAll('a[href="#waitlist-footer"]');
+    
+    // Add click event listener to each link
+    waitlistLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            scrollToWaitlistAndFocus();
+        });
+    });
+});
+
+
 // --- UTILITY FUNCTIONS (Defined at the top level so they are globally accessible within this script) ---
 
 // --- Utility: Set current year in elements with ID 'year' ---
@@ -260,6 +294,46 @@ function createCarousel(options) {
 // --- MAIN DOMContentLoaded LISTENER (for all initializations) ---
 document.addEventListener('DOMContentLoaded', function() {
 
+    // --- Feature List Toggle ---
+    document.querySelectorAll('.toggle-features-btn').forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Find the closest parent '.p-8' which contains both the button and the list
+            const cardContentDiv = event.target.closest('.p-8'); 
+            if (!cardContentDiv) {
+                console.error('Could not find parent .p-8 for feature list toggle.');
+                return;
+            }
+
+            const featureList = cardContentDiv.querySelector('.feature-list');
+            if (!featureList) {
+                console.error('Could not find .feature-list within the card content.');
+                return;
+            }
+
+            const hiddenFeatures = featureList.querySelectorAll('.feature-hidden');
+            if (hiddenFeatures.length === 0) {
+                // No hidden features to toggle, maybe hide the button?
+                // Or button shouldn't have been rendered.
+                console.warn('No .feature-hidden elements found for this button.');
+                // event.target.style.display = 'none'; // Optionally hide button
+                return;
+            }
+
+            // Check the current state based on the first hidden item
+            // It's better to check for the 'hidden' class directly
+            const isCurrentlyExpanded = !hiddenFeatures[0].classList.contains('hidden');
+
+            hiddenFeatures.forEach(feature => {
+                // If it's currently expanded, we want to hide them (add 'hidden')
+                // If it's currently hidden, we want to show them (remove 'hidden')
+                feature.classList.toggle('hidden', isCurrentlyExpanded);
+            });
+
+            // Update button text
+            event.target.textContent = isCurrentlyExpanded ? 'See All Features' : 'See Fewer Features';
+        });
+    });
+
     // Initialize Footer Year
     setFooterYear();
 
@@ -315,23 +389,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'footerWaitlistError'    
         );
     }
-
-    // --- Feature List Toggle for Pricing Section ---
-    document.querySelectorAll('.toggle-features-btn').forEach(button => {
-        button.addEventListener('click', (event) => {
-            let parentCard = event.target.closest('.p-8') || event.target.closest('div[class*="bg-slate-900"]');
-            if (!parentCard) return;
-            const featureList = parentCard.querySelector('.feature-list');
-            if (!featureList) return;
-            const hiddenFeatures = featureList.querySelectorAll('.feature-hidden');
-            if (!hiddenFeatures.length) return;
-            const isCurrentlyHidden = hiddenFeatures[0].classList.contains('hidden');
-            hiddenFeatures.forEach(feature => {
-                feature.classList.toggle('hidden', !isCurrentlyHidden);
-            });
-            event.target.textContent = isCurrentlyHidden ? 'See Fewer Features' : 'See All Features';
-        });
-    });
 
     // Initialize Feature Overview Carousel
     createCarousel({
