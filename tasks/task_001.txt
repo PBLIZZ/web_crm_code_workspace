@@ -57,15 +57,317 @@ Create folders for assets, includes, pages, css, js, and config. Document struct
 ### Details:
 Install/configure PHP, set up local server, verify PHP version compatibility, configure error reporting
 
-## 4. Create Base PHP Files [pending]
+## 4. Create Base PHP Files [done]
 ### Dependencies: 1.2, 1.3
 ### Description: Create initial PHP files for each required page
 ### Details:
 Create index.php, about.php, contact.php with basic PHP structure and placeholder content
+<info added on 2025-05-14T21:51:27.530Z>
+Create index.php, about.php, contact.php with basic PHP structure and placeholder content. Ensure each file includes a responsive footer component with working links to all available page sections. Review and update footer links to only reference existing pages and sections, removing or disabling links to unimplemented pages. Adjust footer responsiveness, focusing on tablet view breakpoints, to ensure proper layout and usability across devices. Adhere to PHP best practices and coding standards, such as PSR-12, for maintainable and error-free code.
+</info added on 2025-05-14T21:51:27.530Z>
 
-## 5. Implement Shared Components [pending]
+## 5. Implement Shared Components [done]
 ### Dependencies: 1.4
 ### Description: Create and integrate header and footer includes
 ### Details:
 Create header.php and footer.php in includes directory, implement basic HTML structure, add include statements to all pages
+
+## 6. Install PHP Development Environment [done]
+### Dependencies: None
+### Description: Install and configure MAMP/XAMPP/WAMP for local PHP development
+### Details:
+1. Download and install MAMP (Mac), XAMPP (cross-platform), or WAMP (Windows)
+2. Configure document root to point to project directory
+3. Verify PHP version is compatible (recommended PHP 7.4+)
+4. Test installation by starting servers
+
+## 7. Configure PHP Settings [pending]
+### Dependencies: None
+### Description: Set up PHP configuration for development environment
+### Details:
+1. Create/modify php.ini file for development settings
+2. Enable error reporting and display_errors for debugging
+3. Set appropriate memory_limit for development
+4. Configure timezone settings
+5. Enable necessary PHP extensions (mysqli, curl, etc.)
+
+## 8. Set Up Database Environment [pending]
+### Dependencies: None
+### Description: Configure MySQL database for local development
+### Details:
+1. Create new database in phpMyAdmin or MySQL Workbench
+2. Set up database user with appropriate permissions
+3. Create initial schema with required tables (if applicable)
+4. Document database credentials in a secure .env file
+5. Test database connection from PHP
+
+## 9. Configure Development Tools [pending]
+### Dependencies: None
+### Description: Set up additional development tools and debugging
+### Details:
+1. Configure error logging to file
+2. Set up basic debugging tools or extensions
+3. Create a development-specific configuration file
+4. Test PHP environment with a test script
+5. Document the development setup process in README.md
+
+## 10. Create Header Component [pending]
+### Dependencies: None
+### Description: Design and implement the site header with navigation
+### Details:
+1. Create header.php in the includes directory
+2. Implement responsive navigation menu structure
+3. Add site logo and branding elements
+4. Implement mobile menu toggle functionality
+5. Ensure navigation links to all main pages
+6. Add user authentication/login buttons if applicable
+7. Style with appropriate CSS classes
+
+## 11. Create Footer Component [pending]
+### Dependencies: None
+### Description: Design and implement the site footer with navigation and copyright
+### Details:
+1. Create footer.php in the includes directory
+2. Implement footer navigation with links to all main pages
+3. Add copyright information and year
+4. Include social media links
+5. Add newsletter subscription form if applicable
+6. Include legal links (privacy policy, terms, etc.)
+7. Ensure responsive design for mobile devices
+8. Add company information and contact details
+
+## 12. Implement Reusable Layout Container [pending]
+### Dependencies: None
+### Description: Create a reusable layout container for consistent page structure
+### Details:
+1. Create main_layout.php in includes directory
+2. Implement the standard HTML structure with doctype, head, meta tags
+3. Include viewport settings and responsive meta tags
+4. Set up standard CSS/JS includes
+5. Add header and footer includes
+6. Create content container with consistent max-width and margins
+7. Ensure the layout works consistently across all pages
+
+## 13. Create About Page [pending]
+### Dependencies: None
+### Description: Create the About page with company information and story
+### Details:
+1. Create about.php using the main layout template
+2. Include sections for company story, mission, and vision
+3. Add team section with placeholder for team members
+4. Include values and guiding principles section
+5. Add appropriate heading structure and placeholder content
+6. Ensure responsive layout for all screen sizes
+
+## 14. Create Blog Page [pending]
+### Dependencies: None
+### Description: Create the Blog page with article listing and structure
+### Details:
+1. Create blog.php using the main layout template
+2. Implement blog listing grid/list view
+3. Add featured article section at the top
+4. Include blog post preview cards with image, title, excerpt
+5. Add pagination or load more functionality
+6. Include category/tag filtering options
+7. Ensure responsive design for all screen sizes
+
+## 15. Create Investors/Collaborators Page [pending]
+### Dependencies: None
+### Description: Create a page for potential investors and collaboration partners
+### Details:
+1. Create investors.php using the main layout template
+2. Include company growth metrics and market opportunity section
+3. Add investment vision and business model section
+4. Include current investors/partners showcase (if applicable)
+5. Add a contact form specific for investor inquiries
+6. Include downloadable resources like pitch deck and financials
+7. Ensure professional design with appropriate data visualizations
+
+## 16. Create Resources Page [pending]
+### Dependencies: None
+### Description: Create a resources page with downloadable PDFs and micro apps
+### Details:
+1. Create resources.php using the main layout template
+2. Implement resource category/filtering system
+3. Create download cards for PDF resources with thumbnails
+4. Add micro-app access section for tools like social media post generator
+5. Include resource descriptions and preview images
+6. Implement secure download functionality if needed
+7. Add search functionality for resources
+8. Ensure responsive design for all screen sizes
+
+## 17. Create Documentation Page [pending]
+### Dependencies: None
+### Description: Create a documentation page for app users
+### Details:
+1. Create docs.php using the main layout template
+2. Implement documentation navigation sidebar/menu
+3. Create documentation content structure with proper heading hierarchy
+4. Add search functionality for documentation content
+5. Include code examples and screenshots where relevant
+6. Implement anchor links for easy section navigation
+7. Add version information and last updated timestamps
+8. Ensure responsive design and readability on all devices
+
+## 18. Create Getting Started Page [pending]
+### Dependencies: None
+### Description: Create a customer support and getting started page
+### Details:
+1. Create getting-started.php using the main layout template
+2. Implement quick start guide with step-by-step instructions
+3. Add FAQ section with expandable answers
+4. Include tutorial videos or screenshots for common tasks
+5. Add support contact options (chat, email, phone)
+6. Implement troubleshooting section for common issues
+7. Add knowledge base search functionality
+8. Include user guides and help documentation links
+
+## 19. Create Contact Page [pending]
+### Dependencies: None
+### Description: Create a contact page with form and contact information
+### Details:
+1. Create contact.php using the main layout template
+2. Implement contact form with appropriate fields (name, email, subject, message)
+3. Add form validation (client and server-side)
+4. Include company contact information (address, phone, email)
+5. Add Google Maps integration if applicable
+6. Implement contact form submission handling
+7. Add CAPTCHA/anti-spam measures
+8. Create thank you/confirmation message after form submission
+
+## 20. Create "Why Wellness Pros Love Us" Section [pending]
+### Dependencies: None
+### Description: Create a dedicated section highlighting benefits for wellness professionals
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design testimonial-style showcase with customer quotes
+3. Include key benefits and value propositions for wellness professionals
+4. Add visual elements (icons, images) to enhance messaging
+5. Ensure proper responsive behavior
+6. Include call-to-action for wellness professionals
+
+## 21. Create "Problems We Solve" Section [pending]
+### Dependencies: None
+### Description: Create a section highlighting the key problems addressed by the application
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Identify and list 4-6 key pain points faced by wellness professionals
+3. Design visual representation of each problem
+4. Pair each problem with the corresponding solution offered by the platform
+5. Use engaging, empathetic language that resonates with target audience
+6. Ensure responsive design for all screen sizes
+7. Include relevant statistics or research data if available
+
+## 22. Create "Technology Behind Our App" Section [pending]
+### Dependencies: None
+### Description: Create a section showcasing the technology powering the application
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Highlight key technologies and AI capabilities
+3. Create visual representations of how the technology works
+4. Explain complex concepts in simple, accessible language
+5. Include interactive elements if possible (tooltips, expandable sections)
+6. Emphasize security, scalability, and innovation aspects
+7. Add visual tech stack representation
+
+## 23. Create "Built for Wellness by Wellness" Section [pending]
+### Dependencies: None
+### Description: Create a section highlighting the industry expertise behind the platform
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Highlight team members' wellness industry background and expertise
+3. Showcase how the platform was developed based on real industry needs
+4. Include testimonials or quotes from wellness professionals who contributed
+5. Add visuals of wellness professionals using the platform
+6. Emphasize the authentic connection to the wellness industry
+7. Ensure responsive layout for all screen sizes
+
+## 24. Create "Our Mission and Vision" Section [done]
+### Dependencies: None
+### Description: Create a section showcasing the company's mission and vision statements
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design visually impactful presentation of mission statement
+3. Create separate but complementary vision statement presentation
+4. Include supporting elements like core values or impact goals
+5. Add visual elements that reinforce the mission/vision themes
+6. Ensure consistent branding and messaging
+7. Make section responsive for all screen sizes
+
+## 25. Create "Our Story" Section [done]
+### Dependencies: None
+### Description: Create a section detailing the company's foundation and journey
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design timeline or narrative format for company history
+3. Include key milestones and pivotal moments
+4. Add founder stories and personal elements
+5. Include images/visuals to support the narrative
+6. Ensure responsive design for all screen sizes
+7. Connect story to current company values and direction
+
+## 26. Create "Meet the Team" Section [done]
+### Dependencies: None
+### Description: Create a section introducing team members and their roles
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design team member profile cards with photo, name, role, and bio
+3. Include social media links for each team member
+4. Organize by departments or leadership tiers if applicable
+5. Add interactive elements like hover effects or click-to-expand bios
+6. Ensure responsive grid layout for different screen sizes
+7. Include space for future team additions
+
+## 27. Create "FAQ" Section [pending]
+### Dependencies: None
+### Description: Create a frequently asked questions section with expandable answers
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Implement accordion/expandable question and answer functionality
+3. Organize questions by categories if there are many
+4. Include search functionality for finding specific questions
+5. Add "Contact Us" link for questions not covered
+6. Ensure accessibility for keyboard navigation and screen readers
+7. Make fully responsive for all screen sizes
+
+## 28. Create "Values and Guiding Principles" Section [pending]
+### Dependencies: None
+### Description: Create a section showcasing the company's core values and principles
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design visual representation for each core value (icons, illustrations)
+3. Provide concise descriptions for each value/principle
+4. Show how values translate to user benefits
+5. Include real examples of values in action if available
+6. Ensure consistent styling with other sections
+7. Make fully responsive for all screen sizes
+
+## 29. Create "Beta Tester Programme" Section [pending]
+### Dependencies: None
+### Description: Create a section for beta tester recruitment and information
+### Details:
+1. Create a reusable section component in includes/sections directory
+2. Design sign-up form for beta program with relevant fields
+3. Include benefits of joining the beta program
+4. Add testimonials from current beta testers if available
+5. Explain the beta testing process and expectations
+6. Include FAQ specific to beta testing
+7. Add visual elements highlighting beta features
+8. Ensure responsive design for all screen sizes
+
+## 30. Integrate Shadcn UI Components [pending]
+### Dependencies: None
+### Description: Set up and integrate Shadcn UI components for consistent styling
+### Details:
+1. Install Shadcn UI dependencies (if using via npm)
+2. Set up Tailwind CSS configuration to support Shadcn UI
+3. Create component wrappers for common Shadcn UI elements:
+   - Create button.php for Shadcn button styles
+   - Create card.php for Shadcn card components
+   - Create form-elements.php for Shadcn form inputs, selects, etc.
+   - Create navigation.php for Shadcn navigation components
+4. Document usage patterns in a style guide file
+5. Ensure components are properly responsive
+6. Create consistent theme variables for colors, spacing, etc.
+7. Implement dark/light mode toggle functionality if desired
 

@@ -51,7 +51,7 @@
             </div>
 
             <!-- Image Column (positioned to be symmetrical with heading) -->
-            <div class="w-full lg:w-2/5 flex justify-center lg:justify-center self-center lg:self-center mt-10 lg:mt-6 relative hidden lg:flex max-w-[300px] lg:max-w-none mx-auto"> <!-- Adjusted positioning for better symmetry -->
+            <div class="w-full lg:w-2/5 justify-center lg:justify-center self-center lg:self-center mt-10 lg:mt-6 relative hidden lg:flex max-w-[300px] lg:max-w-none mx-auto"> <!-- Adjusted positioning for better symmetry -->
                 <img src="/assets/img/woman-smiling-about.png" 
                      alt="Wellness professional using Omnipotency AI" 
                      class="relative rounded-lg shadow-2xl w-full sm:w-1/2 md:w-1/2 lg:w-auto max-h-[50vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[80vh] xl:max-h-[600px] object-contain z-10 floating-animation">

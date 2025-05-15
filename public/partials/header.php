@@ -40,11 +40,11 @@ $navLinks = [
     // The $currentPage variable from the main PHP file (e.g. index.php or about.php)
     // will tell us which page we are on.
 
-    // Links as per your image for the header:
-    ['href' => 'pages/about.php',      'text' => 'About',   'page_id' => 'about'],   // Located in pages/about.php
-    ['href' => 'index.php#docs', 'text' => 'Docs',    'page_id' => 'home_docs'], // Section on home
-    ['href' => 'blog.php',       'text' => 'Blog',    'page_id' => 'blog'],    // Assumes blog.php
-    ['href' => 'index.php#pricing','text' => 'Pricing', 'page_id' => 'home_pricing'] // Section on home
+    // Links using clean URLs for the router
+    ['href' => BASE_URL . '/about', 'text' => 'About', 'page_id' => 'about'],       // Routes to /pages/about_content.php
+    ['href' => BASE_URL . '/docs', 'text' => 'Docs', 'page_id' => 'docs'],          // Routes to /pages/docs_content.php
+    ['href' => BASE_URL . '/blog', 'text' => 'Blog', 'page_id' => 'blog'],          // Routes to /pages/blog_content.php
+    ['href' => BASE_URL . '/#pricing', 'text' => 'Pricing', 'page_id' => 'home_pricing'] // Section on home
 ];
 
 // Define base classes for links - Tailored to the dark teal header from your image

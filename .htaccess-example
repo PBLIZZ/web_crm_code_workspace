@@ -1,0 +1,27 @@
+# Prevent directory listing
+Options -Indexes
+
+# Prevent direct access to this directory
+<IfModule mod_authz_core.c>
+    # Apache 2.4+
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    # Apache 2.2 and earlier
+    Order deny,allow
+    Deny from all
+</IfModule>
+
+# Block viewing of .htaccess file itself
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# If you still need access to certain files or from certain IPs, uncomment and modify:
+# <FilesMatch "^(allowed-file\.php)$">
+#    Allow from all
+# </FilesMatch>
+
+# Allow from specific IP (uncomment and replace with your IP if needed)
+# Allow from 123.45.67.89

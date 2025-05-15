@@ -1,6 +1,5 @@
 <?php // public/index.php (Landing Page Controller)
-session_start(); 
-ini_set('display_errors', 1); error_reporting(E_ALL); 
+require_once __DIR__ . '/bootstrap.php';
 
 // --- SIMPLE ROUTING SYSTEM ---
 $request_uri = $_SERVER['REQUEST_URI'];
@@ -20,8 +19,15 @@ if (empty($path)) {
 // Define routes (key = clean URL path, value = path to PHP file relative to __DIR__ of index.php)
 $routes = [
     '/'                   => '/sections/home_content.php', // Homepage sections
+    '/about'              => '/pages/about_content.php', // About page
     '/terms-of-service'   => '/pages/terms_of_service_content.php',
-    '/privacy-policy'     => '/pages/privacy_policy_content.php'
+    '/privacy-policy'     => '/pages/privacy_policy_content.php',
+    '/blog'               => '/pages/blog_content.php',
+    '/resources'          => '/pages/resources_content.php',
+    '/docs'               => '/pages/docs_content.php',
+    '/contact'            => '/pages/contact_content.php',
+    '/investors'          => '/pages/investors_content.php',
+    '/cookies'            => '/pages/cookies_content.php'
     // Add more routes as needed
 ];
 

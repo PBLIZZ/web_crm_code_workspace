@@ -407,4 +407,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // createCarousel({ sliderId: 'valuesSlider', ... });
     // createCarousel({ sliderId: 'techSlider', ... });
 
+    // --- Back to Top Button Functionality ---
+    const backToTopButton = document.getElementById('backToTopBtn');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
 }); // End of MAIN DOMContentLoaded listener

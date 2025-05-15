@@ -60,10 +60,11 @@
       <div class="lg:pl-4 lg:col-span-2">
         <h3 class="text-white font-semibold mb-4 text-lg mt-6">Resources</h3>
         <nav class="flex flex-col space-y-2">
-          <a href="/resources/docs" class="text-[#FF8700] hover:text-white transition no-underline">Docs</a>
+          <a href="/docs" class="text-[#FF8700] hover:text-white transition no-underline">Docs</a>
           <a href="/blog" class="text-[#FF8700] hover:text-white transition no-underline">Blog</a>
-          <a href="/resources/downloads" class="text-[#FF8700] hover:text-white transition no-underline">Downloads</a>
-          <a href="/faq" class="text-[#FF8700] hover:text-white transition no-underline">FAQ</a>
+          <a href="/resources" class="text-[#FF8700] hover:text-white transition no-underline">Resources</a>
+          <!-- Coming Soon Links -->
+          <span class="text-slate-500 cursor-not-allowed transition no-underline text-sm">FAQ (Coming Soon)</span>
         </nav>   
       </div>
       
@@ -107,10 +108,20 @@
         <div class="flex gap-4 mt-3 sm:mt-0">
           <a href="/privacy-policy" class="text-slate-400 hover:text-white transition no-underline">Privacy Policy</a>
           <a href="/terms-of-service" class="text-slate-400 hover:text-white transition no-underline">Terms of Service</a>
-          <a href="mailto:team@omnipotency.ai" class="text-slate-400 hover:text-white transition no-underline">Contact</a>
+          <a href="/contact" class="text-slate-400 hover:text-white transition no-underline">Contact</a>
+          <a href="/cookies" class="text-slate-400 hover:text-white transition no-underline">Cookies</a>
+          <a href="/investors" class="text-slate-400 hover:text-white transition no-underline">Investors</a>
         </div>
       </div>
     </div>
   </div>
+
+<!-- Back to Top Button -->
+<button id="backToTopBtn" title="Go to top"
+        class="fixed bottom-5 right-5 p-3 bg-brand-orange-500 text-white rounded-full shadow-lg hover:bg-brand-orange-600 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+</button>
 </footer>
 
