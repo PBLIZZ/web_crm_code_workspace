@@ -45,14 +45,14 @@
       <div class="pl-4 md:pl-8 lg:pl-6 lg:col-span-2">
         <h3 class="text-white font-semibold mb-4 text-lg">Quick Links</h3>
         <nav class="flex flex-col space-y-2">
-          <a href="#features" class="text-[#FF8700] hover:text-white transition no-underline">Features</a>
-          <a href="#pricing" class="text-[#FF8700] hover:text-white transition no-underline">Pricing</a>
+          <a href="/#features-overview" class="text-[#FF8700] hover:text-white transition no-underline">Features</a>
+          <a href="/#pricing" class="text-[#FF8700] hover:text-white transition no-underline">Pricing</a>
 
-          <a href="#about" class="text-[#FF8700] hover:text-white transition no-underline">About Us</a>
-          <a href="#team" class="text-[#FF8700] hover:text-white transition no-underline">Our Team</a>
-          <a href="#values" class="text-[#FF8700] hover:text-white transition no-underline">Our Values</a>
-          <a href="#beta" class="text-[#FF8700] hover:text-white transition no-underline">Become a Beta Tester</a>
-          <a href="#waitlist" class="text-[#FF8700] hover:text-white transition no-underline">Join Waitlist</a>
+          <a href="/about#our-story" class="text-[#FF8700] hover:text-white transition no-underline">About Us</a>
+          <a href="/about#team" class="text-[#FF8700] hover:text-white transition no-underline">Our Team</a>
+          <a href="/about#mission-vision-values" class="text-[#FF8700] hover:text-white transition no-underline">Our Values</a>
+          <!-- <a href="#beta" class="text-[#FF8700] hover:text-white transition no-underline">Become a Beta Tester</a> -->
+          <!-- <a href="#waitlist" class="text-[#FF8700] hover:text-white transition no-underline">Join Waitlist</a> -->
         </nav>
       </div>
       
@@ -60,10 +60,10 @@
       <div class="lg:pl-4 lg:col-span-2">
         <h3 class="text-white font-semibold mb-4 text-lg mt-6">Resources</h3>
         <nav class="flex flex-col space-y-2">
-          <a href="#docs" class="text-[#FF8700] hover:text-white transition no-underline">Docs</a>
-          <a href="#blog" class="text-[#FF8700] hover:text-white transition no-underline">Blog</a>
-          <a href="#downloads" class="text-[#FF8700] hover:text-white transition no-underline">Downloads</a>
-          <a href="#faq" class="text-[#FF8700] hover:text-white transition no-underline">FAQ</a>
+          <a href="/resources/docs" class="text-[#FF8700] hover:text-white transition no-underline">Docs</a>
+          <a href="/blog" class="text-[#FF8700] hover:text-white transition no-underline">Blog</a>
+          <a href="/resources/downloads" class="text-[#FF8700] hover:text-white transition no-underline">Downloads</a>
+          <a href="/faq" class="text-[#FF8700] hover:text-white transition no-underline">FAQ</a>
         </nav>   
       </div>
       
@@ -94,7 +94,7 @@
               Join Waitlist
             </button>
           </div>
-          <p id="footerWaitlistSuccess" class="text-center text-sm text-green-400 mt-3 hidden"><p>🎉 Thanks! We'll keep you updated.</p>
+          <p id="footerWaitlistSuccess" class="text-center text-sm text-green-400 mt-3 hidden">🎉 Thanks! We'll keep you updated.</p>
           <p id="footerWaitlistError" class="text-center text-sm text-red-400 mt-3 hidden"></p>
         </form>
       </div>

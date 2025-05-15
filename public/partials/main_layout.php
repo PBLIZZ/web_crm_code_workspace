@@ -16,6 +16,14 @@ $pageDescription = $pageDescription ?? 'The AI-Powered CRM for Wellness Professi
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>">
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
     
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KL6KZ89Q');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Tailwind Output CSS -->
     <link href="<?php echo BASE_URL; ?>/assets/css/output.css" rel="stylesheet">
     
@@ -28,7 +36,15 @@ $pageDescription = $pageDescription ?? 'The AI-Powered CRM for Wellness Professi
     // if (isset($additionalHeadContent)) { echo $additionalHeadContent; }
     ?>
 </head>
-<body class="bg-brand-green-800 text-gray-300 font-sans antialiased leading-relaxed">
+<body class="font-sans antialiased leading-relaxed text-gray-300" style="background: linear-gradient(to bottom, #003833 0%, #004d44 60%, #006558 100%);">
+    <!-- Orange overlay decorative elements -->
+    <div class="fixed top-1/4 right-0 w-64 h-64 bg-brand-orange-500 rounded-full filter blur-3xl opacity-5 -z-10"></div>
+    <div class="fixed top-2/3 left-0 w-48 h-48 bg-brand-orange-500 rounded-full filter blur-3xl opacity-5 -z-10"></div>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL6KZ89Q"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <?php
     // Include common header
