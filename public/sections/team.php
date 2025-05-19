@@ -16,7 +16,7 @@
           <img src="<?php echo BASE_URL; ?>/assets/img/peter blizzard copy 2.png" alt="Peter James Blizzard" 
                class="w-20 h-20 rounded-full mx-auto object-cover relative shadow-lg transition-transform duration-300 group-hover:scale-105">
         </div>
-        <h3 class="text-xl font-semibold text-white mb-1">Peter James Blizzard</h3>
+        <h3 class="text-xl font-semibold text-white mb-1">Peter</h3>
         <p class="text-brand-orange-400 mb-4">Founder & CEO</p>
         <p class="text-gray-300 text-sm leading-relaxed">
         Massage therapist for 25 years and yoga teacher for over a decade, Peter spent his career guiding clients toward body–mind balance before a series of health setbacks nudged him off the treatment table and into tech. Living with ADHD and an ileostomy, he channelled his hyper-focus into night-time coding sprints, open-source contributions, and—eventually—Omnipotency AI.
@@ -28,7 +28,8 @@
 
       <!-- We Are Hiring Section -->
       <div class="p-8 rounded-3xl border border-white/70 shadow-md hover:shadow-xl hover:border-brand-teal-400/90 hover:border-2 transition-all duration-300 ease-in-out transform hover:scale-[1.02]">
-        <h3 class="text-2xl font-semibold text-white mb-8 text-center">We're Growing Our Team!</h3>
+        <h3 class="text-2xl font-semibold text-white mb-4 text-center">We're Growing Our Team!</h3>
+        <p class="text-center text-gray-300 mb-8">Come Build the Future of Wellness Tech With Us</p>
         
         <div class="space-y-6">
             <!-- Full Stack Developer Role -->
@@ -37,7 +38,7 @@
                 <div class="shrink-0 mr-3 pt-1">
                   <svg class="w-5 h-5 text-brand-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
                 </div>
-                <h4 class="text-lg font-medium text-white">Full Stack Software Developer</h4>
+                <h4 class="text-lg font-medium text-white">👨‍💻 Full Stack Software Developer</h4>
               </div>
               <p class="text-gray-400 text-sm ml-8 mb-2">
                 Talented developer with data science experience to help build our AI-powered platform and shape our core product.
@@ -53,7 +54,7 @@
                  <div class="shrink-0 mr-3 pt-1">
                   <svg class="w-5 h-5 text-brand-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" /></svg>
                 </div>
-                <h4 class="text-lg font-medium text-white">Relationship Manager</h4>
+                <h4 class="text-lg font-medium text-white">🤝 Relationship Manager</h4>
               </div>
               <p class="text-gray-400 text-sm ml-8 mb-2">
                 Influential individual to manage key relationships with investors, customers, and partners in the wellness tech ecosystem.

@@ -18,7 +18,7 @@
         <h3 class="text-2xl lg:text-3xl font-semibold text-white mb-6">From Frustration to Innovation</h3>
         <div class="space-y-4 prose prose-lg prose-invert max-w-none">
             <p>
-              For a decade Peter James Blizzard watched gifted therapists drown in spreadsheets, no-show texts and pricey "enterprise" CRMs.  
+              For a decade Peter watched gifted therapists drown in spreadsheets, no-show texts and pricey "enterprise" CRMs.  
               So in 2025, fresh from his own rehabilitation journey, he decided it was time to build software that genuinely <em>feels good</em> to use.
             </p>
             <p>
@@ -38,7 +38,7 @@
                   Every product I tried was either too clunky, too corporate, or too expensive for a solo practice.
                 </p>
                 <footer class="mt-4">
-                  <p class="text-sm text-right text-brand-orange-400">— Peter James Blizzard, Founder</p>
+                  <p class="text-sm text-right text-brand-orange-400">— Peter, Founder</p>
                 </footer>
               </blockquote>
             </div>

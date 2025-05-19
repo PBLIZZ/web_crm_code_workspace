@@ -27,7 +27,8 @@ $routes = [
     '/docs'               => '/pages/docs_content.php',
     '/contact'            => '/pages/contact_content.php',
     '/investors'          => '/pages/investors_content.php',
-    '/cookies'            => '/pages/cookies_content.php'
+    '/cookies'            => '/pages/cookies_content.php',
+    '/beta'               => '/pages/beta_content.php'
     // Add more routes as needed
 ];
 

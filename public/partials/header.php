@@ -88,7 +88,7 @@ $mobileLinkActiveColor = "text-brand-orange-500";
         <?php endforeach; ?>
       </nav>
       <div class="flex items-center">
-        <a href="pages/about.php#beta-list" class="hidden sm:inline-block bg-brand-orange-500 hover:bg-brand-orange-600 ml-3 rounded-lg px-5 py-2.5 text-sm font-medium text-white transition duration-150 ease-in-out no-underline">
+        <a href="<?php echo BASE_URL; ?>/beta" class="hidden sm:inline-block bg-brand-orange-500 hover:bg-brand-orange-600 ml-3 rounded-lg px-5 py-2.5 text-sm font-medium text-white transition duration-150 ease-in-out no-underline">
           Get Started
         </a>
         <button id="menuToggle" type="button" class="ml-3 md:hidden inline-flex items-center justify-center p-2 rounded-md text-white hover:text-brand-orange-500 hover:bg-brand-green-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobileMenu" aria-expanded="false">
@@ -117,7 +117,7 @@ $mobileLinkActiveColor = "text-brand-orange-500";
           <?php echo htmlspecialchars($link['text']); ?>
         </a>
         <?php endforeach; ?>
-        <a href="pages/about.php#beta-list" class="block w-full text-center bg-brand-orange-500 hover:bg-brand-orange-600 mt-2 rounded-md px-5 py-3 text-base font-medium text-white transition duration-150 ease-in-out no-underline">
+        <a href="<?php echo BASE_URL; ?>/beta" class="block w-full text-center bg-brand-orange-500 hover:bg-brand-orange-600 mt-2 rounded-md px-5 py-3 text-base font-medium text-white transition duration-150 ease-in-out no-underline">
           Get Started
         </a>
     </div>

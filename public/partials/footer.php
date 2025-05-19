@@ -51,8 +51,7 @@
           <a href="/about#our-story" class="text-[#FF8700] hover:text-white transition no-underline">About Us</a>
           <a href="/about#team" class="text-[#FF8700] hover:text-white transition no-underline">Our Team</a>
           <a href="/about#mission-vision-values" class="text-[#FF8700] hover:text-white transition no-underline">Our Values</a>
-          <!-- <a href="#beta" class="text-[#FF8700] hover:text-white transition no-underline">Become a Beta Tester</a> -->
-          <!-- <a href="#waitlist" class="text-[#FF8700] hover:text-white transition no-underline">Join Waitlist</a> -->
+          <a href="/beta" class="text-[#FF8700] hover:text-white transition no-underline">Beta Programme</a>
         </nav>
       </div>
       
@@ -63,8 +62,9 @@
           <a href="/docs" class="text-[#FF8700] hover:text-white transition no-underline">Docs</a>
           <a href="/blog" class="text-[#FF8700] hover:text-white transition no-underline">Blog</a>
           <a href="/resources" class="text-[#FF8700] hover:text-white transition no-underline">Resources</a>
-          <!-- Coming Soon Links -->
-          <span class="text-slate-500 cursor-not-allowed transition no-underline text-sm">FAQ (Coming Soon)</span>
+          <a href="/#faq" class="text-[#FF8700] hover:text-white transition no-underline">FAQ</a>
+          <a href="/contact" class="text-[#FF8700] hover:text-white transition no-underline">Contact</a>
+          <a href="/investors" class="text-[#FF8700] hover:text-white transition no-underline">Investors</a>
         </nav>   
       </div>
       
@@ -78,19 +78,19 @@
         
         <p class="text-white text-sm mb-4">Join the waitlist for priority access and beta perks!</p>
         
-        <form id="footerWaitlistForm" class="mb-4">
-          <div class="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden">
+        <form id="footerWaitlistForm" class="mb-4 max-w-md">
+          <div class="flex flex-row shadow-lg rounded-lg overflow-hidden">
             <input 
               type="email" 
               name="email" 
               placeholder="Enter your email" 
               required 
-              class="w-full md:flex-1 bg-white p-3 outline-none text-gray-900 text-sm" 
+              class="w-[60%] bg-white p-3 outline-none text-gray-900 text-sm" 
             />
             <button 
               id="waitlistButton"
               type="submit"
-              class="w-full md:w-auto bg-gradient-to-r from-[#14B8A6] to-[#FF8700] text-white font-medium p-3 transition-all duration-300 ease-in-out text-sm px-6"
+              class="w-[40%] whitespace-nowrap bg-gradient-to-r from-[#14B8A6] to-[#FF8700] text-white font-medium p-3 transition-all duration-300 ease-in-out text-sm px-4 sm:px-6"
             >
               Join Waitlist
             </button>
@@ -108,9 +108,7 @@
         <div class="flex gap-4 mt-3 sm:mt-0">
           <a href="/privacy-policy" class="text-slate-400 hover:text-white transition no-underline">Privacy Policy</a>
           <a href="/terms-of-service" class="text-slate-400 hover:text-white transition no-underline">Terms of Service</a>
-          <a href="/contact" class="text-slate-400 hover:text-white transition no-underline">Contact</a>
           <a href="/cookies" class="text-slate-400 hover:text-white transition no-underline">Cookies</a>
-          <a href="/investors" class="text-slate-400 hover:text-white transition no-underline">Investors</a>
         </div>
       </div>
     </div>

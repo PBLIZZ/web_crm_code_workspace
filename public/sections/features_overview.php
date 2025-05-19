@@ -1,10 +1,6 @@
 <?php // public/sections/features_overview.php ?>
 <section id="features-overview" class="relative overflow-hidden py-16 sm:py-24">
-    <!-- Background Gradient: from current body (brand-green-800) to a darker tone -->
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-green-800 via-brand-green-900 to-brand-dark-base z-[-2]"></div>
-    
-    <!-- Bottom Orange Glow Overlay -->
-    <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-brand-orange-500/30 via-brand-orange-500/10 to-transparent opacity-70 z-[-1] filter blur-3xl pointer-events-none"></div>
+    <!-- Background elements removed for page-wide background -->
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
         <div class="grid grid-cols-1 md:grid-cols-12 md:gap-x-6 lg:gap-x-12 xl:gap-x-16 items-start">

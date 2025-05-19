@@ -333,9 +333,66 @@ document.addEventListener('DOMContentLoaded', function() {
             event.target.textContent = isCurrentlyExpanded ? 'See All Features' : 'See Fewer Features';
         });
     });
+    
+    // --- Initialize FAQ Accordion ---
+    const faqContainer = document.getElementById('faqContainer');
+    if (faqContainer) {
+        const faqItems = faqContainer.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const button = item.querySelector('[data-faq-button]');
+            const answer = item.querySelector('.faq-answer');
+            const plusIcon = item.querySelector('.plus-icon');
+            const minusIcon = item.querySelector('.minus-icon');
+            
+            if (!button || !answer) return;
+            
+            button.addEventListener('click', () => {
+                const isExpanded = !answer.classList.contains('hidden');
+                
+                // Close all other FAQs
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherPlusIcon = otherItem.querySelector('.plus-icon');
+                        const otherMinusIcon = otherItem.querySelector('.minus-icon');
+                        
+                        if (otherAnswer) otherAnswer.classList.add('hidden');
+                        if (otherPlusIcon) otherPlusIcon.classList.remove('hidden');
+                        if (otherMinusIcon) otherMinusIcon.classList.add('hidden');
+                    }
+                });
+                
+                // Toggle current FAQ
+                answer.classList.toggle('hidden');
+                
+                // Toggle icons
+                if (isExpanded) {
+                    plusIcon.classList.remove('hidden');
+                    minusIcon.classList.add('hidden');
+                } else {
+                    plusIcon.classList.add('hidden');
+                    minusIcon.classList.remove('hidden');
+                }
+            });
+        });
+        
+        // Open the first FAQ item by default (optional)
+        if (faqItems.length > 0) {
+            const firstButton = faqItems[0].querySelector('[data-faq-button]');
+            if (firstButton) firstButton.click();
+        }
+    }
 
     // Initialize Footer Year
     setFooterYear();
+
+    // Initialize Form Handlers
+    // Footer waitlist form
+    handleFormSubmit('footerWaitlistForm', '/api/waitlist.php', 'footerWaitlistSuccess', 'footerWaitlistError');
+    
+    // Beta tester waitlist form
+    handleFormSubmit('betaWaitlistForm', '/api/beta_lead.php', 'betaWaitlistSuccess', 'betaWaitlistError');
 
     // Initialize Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -397,6 +454,17 @@ document.addEventListener('DOMContentLoaded', function() {
         prevBtnId: 'prevFeatureCard',
         nextBtnId: 'nextFeatureCard',
         dotsContainerId: 'featureCardSliderDots',
+        defaultSlidesPerView: { sm: 1, md: 2, lg: 3 }, 
+        dotActiveClass: 'bg-brand-orange-500 w-3 h-3 opacity-100',
+    });
+    
+    // Initialize Problems Carousel
+    createCarousel({
+        sliderId: 'problemsSlider',
+        slideClassName: 'problems-slide',
+        prevBtnId: 'prevProblem',
+        nextBtnId: 'nextProblem',
+        dotsContainerId: 'problemsSliderDots',
         defaultSlidesPerView: { sm: 1, md: 2, lg: 3 }, 
         dotActiveClass: 'bg-brand-orange-500 w-3 h-3 opacity-100',
         dotInactiveClass: 'bg-slate-600 w-2 h-2 opacity-60'

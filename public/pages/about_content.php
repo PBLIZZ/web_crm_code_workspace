@@ -13,9 +13,6 @@
     <?php include __DIR__ . '/../sections/built_for_wellness.php'; ?>
     <?php include __DIR__ . '/../sections/our_story.php'; ?>
     <?php include __DIR__ . '/../sections/team.php'; ?>
-    <?php // Potentially the beta signup form section if not already linked from hero/other CTAs
-          // include __DIR__ . '/../sections/beta_signup_form.php'; // You have #beta-list on hero
-    ?>
 </div>
 
 <style>

@@ -1,14 +1,13 @@
 <?php // public/sections/hero.php ?>
-<section id="hero" class="relative h-auto max-h-screen flex items-center justify-center overflow-hidden bg-brand-green-800 text-white">
-    <!-- Background Gradient/Image Layer -->
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-green-800 via-brand-green-700 to-brand-dark-base opacity-75 z-0"></div>
+<section id="hero" class="relative h-auto max-h-screen flex items-center justify-center overflow-hidden text-white">
+    <!-- Background removed for page-wide background -->
     
     <!-- Decorative Blurs (behind content) -->
     <div class="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 md:w-1/3 md:h-1/3 bg-brand-teal-400 rounded-full filter blur-3xl opacity-20 animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite] z-0"></div>
     <div class="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 md:w-1/3 md:h-1/3 bg-brand-orange-500 rounded-full filter blur-3xl opacity-15 animate-[pulse_10s_cubic-bezier(0.4,0,0.6,1)_infinite_2s] z-0"></div>
 
     <!-- Content Container -->
-    <div class="relative w-full max-w-none px-6 sm:px-12 lg:px-24 py-8 sm:py-10 md:py-12 lg:py-16 z-10"> <!-- Increased padding, removed max-w-7xl -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 z-10"> <!-- Using standard site width -->
         
         <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-12"> <!-- Main flex container for text and image -->
             

@@ -1,9 +1,6 @@
 <?php // public/sections/pricing_section.php ?>
-<section id="pricing" class="py-16 sm:py-24 text-white relative overflow-hidden bg-gradient-to-br from-brand-green-900 via-brand-green-600 to-orange-500">
-    <!-- Orange overlay with low opacity -->
-    <div class="absolute inset-0 bg-orange-500/20 mix-blend-overlay"></div>
-    <!-- Background pattern -->
-    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px]"></div>
+<section id="pricing" class="py-16 sm:py-24 text-white relative overflow-hidden">
+    <!-- Background elements removed for page-wide background -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 relative z-10">
             <p class="uppercase text-white text-md tracking-widest font-medium mb-2">PRICING</p>

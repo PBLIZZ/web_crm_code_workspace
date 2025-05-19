@@ -106,6 +106,7 @@ $headerPath = __DIR__ . '/header.php';
       };
     </script>
     <script src="<?php echo BASE_URL; ?>/assets/js/main.js" defer></script>
+    <!-- FAQ and Carousel functionality now included in main.js -->
     <?php 
     // if (isset($additionalScripts)) { echo $additionalScripts; }
     ?>
